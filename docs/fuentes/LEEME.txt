@@ -1,0 +1,21 @@
+ORIGINALES DE LAS FICHAS
+========================
+
+Cada archivo .html de esta carpeta es el original de un PDF de la carpeta docs/.
+El logo y las fotos ya estan dentro del archivo: no hace falta nada mas.
+
+Para cambiar una ficha
+----------------------
+  1. Abrir el .html en GitHub, boton Raw, Ctrl+A, Ctrl+C
+  2. Pegarlo en ChatGPT o Claude y pedir el cambio
+     ("devuelveme el archivo completo")
+  3. Pegar la respuesta de vuelta en GitHub y Commit changes
+
+Para volver a hacer el PDF
+--------------------------
+  1. Abrir el archivo .html en el navegador
+  2. Ctrl+P  ->  Destino: Guardar como PDF  ->  Tamano: A4  ->  Guardar
+  3. Subir el PDF nuevo a docs/ con el mismo nombre que el viejo
+
+Si algo sale mal: GitHub guarda todas las versiones.
+En el archivo -> History -> version anterior -> Revert.
