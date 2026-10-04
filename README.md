@@ -12,6 +12,7 @@ Visitas, voluntariado, animales rescatados. En español, portugués, inglés y f
 | `index.html` | La página completa. Un solo archivo. |
 | `img/` | El logo y las 20 fotos del refugio. |
 | `docs/Jacha-Inti-Guia-de-Traspaso.pdf` | Qué existe y cómo seguir sin el voluntario. **Leer primero.** |
+| `docs/Jacha-Inti-Zona-1-ES.pdf` | Ficha diaria del voluntario, zona 1. Imprimir y plastificar. |
 | `docs/Jacha-Inti-Zona-2-ES.pdf` | Ficha diaria del voluntario, zona 2. Imprimir y plastificar. |
 | `docs/Jacha-Inti-Zona-2-FR.pdf` | La misma ficha en francés. |
 
