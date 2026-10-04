@@ -165,12 +165,13 @@ h3{font-family:var(--fd);font-weight:600;margin:0;font-size:22px;line-height:1.1
 .maplink svg{width:17px;height:17px;color:var(--sun)}
 
 /* ===== bouton WhatsApp ===== */
-.wa{display:inline-flex;align-items:center;gap:11px;background:#1f9e52;color:#04210f;
-  font-family:var(--fb);font-weight:700;font-size:15.5px;padding:15px 26px;border-radius:999px;
+.wa{display:inline-flex;align-items:center;gap:12px;background:#1f9e52;color:#04210f;
+  font-family:var(--fb);font-weight:700;font-size:15.5px;padding:15px 26px 15px 22px;border-radius:999px;
   text-decoration:none;transition:transform .2s,background .2s}
 .wa:hover{background:#27b85f;transform:translateY(-2px)}
 .wa:focus-visible{outline:3px solid var(--bone);outline-offset:3px}
 .wa svg{width:20px;height:20px;flex:0 0 auto}
+.wa span{display:inline;margin:0;color:inherit;font-size:inherit;line-height:1.1}
 .cta.ghost{background:none;color:var(--bone);border:1px solid rgba(242,239,227,.45)}
 .cta.ghost:hover{background:rgba(242,239,227,.12);color:#fff}
 
@@ -221,7 +222,8 @@ h3{font-family:var(--fd);font-weight:600;margin:0;font-size:22px;line-height:1.1
 .volshot img{width:100%;aspect-ratio:3/4;object-fit:cover}
 .min{margin-top:18px;border:1px solid var(--sun);border-radius:3px;padding:24px;background:rgba(233,168,38,.07)}
 .min b{display:block;font-family:var(--fd);font-weight:700;font-size:clamp(38px,6vw,58px);line-height:.95;color:var(--sun)}
-.min span{display:block;margin-top:10px;font-size:14.5px;color:var(--bone-dim);line-height:1.52}
+.min > span{display:block;margin-top:10px;font-size:14.5px;color:var(--bone-dim);line-height:1.52}
+.min .wa{margin-top:22px}
 .min .cta{margin-top:20px}
 
 /* ===== contact ===== */
