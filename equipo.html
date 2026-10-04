@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Equipo y voluntarios — Refugio Jacha Inti</title>
+<link rel="icon" href="img/logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+
+/* Monde unique et assume : la foret de nuages de Samaipata, du sous-bois a la canopee.
+   Fond vert profond partout, photos qui respirent dessus, le soleil du logo pour seul accent chaud. */
+:root{
+  --under:#061a12;      /* sous-bois, le plus sombre */
+  --forest:#0a2a1d;     /* fond general */
+  --forest-2:#0e3827;   /* bandes alternees */
+  --canopy:#15543a;     /* bordures, surfaces */
+  --leaf:#3f9c6d;       /* vert vif, liens */
+  --sun:#e9a826;        /* le soleil du logo */
+  --sun-2:#f6c75b;
+  --bone:#f2efe3;       /* texte principal */
+  --bone-dim:#b9c4ba;   /* texte secondaire */
+  --hair:rgba(242,239,227,.14);
+  --fd:"Fraunces",Georgia,serif;
+  --fb:"Archivo",system-ui,-apple-system,sans-serif;
+  --fn:"IBM Plex Mono",ui-monospace,monospace;
+  --gut:clamp(20px,5.5vw,72px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--forest);color:var(--bone);font-family:var(--fb);font-size:16.5px;line-height:1.62}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:var(--gut)}
+section{position:relative}
+p{margin:0}
+h2{font-family:var(--fd);font-optical-sizing:auto;font-weight:600;margin:0;line-height:1.02;
+  font-size:clamp(33px,5.6vw,62px);letter-spacing:-.018em;text-wrap:balance}
+h3{font-family:var(--fd);font-weight:600;margin:0;font-size:22px;line-height:1.14;letter-spacing:-.01em}
+.eyebrow{font-family:var(--fn);font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--sun);margin:0 0 16px;display:flex;align-items:center;gap:12px}
+.eyebrow::after{content:"";height:1px;flex:1 1 auto;background:linear-gradient(90deg,var(--sun),transparent);max-width:120px}
+.lead{font-size:clamp(16.5px,1.85vw,20px);line-height:1.64;color:var(--bone-dim);max-width:58ch}
+
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--forest);color:var(--bone);font-family:var(--fb);font-size:16.5px;line-height:1.62}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--leaf)}
+.wrap{max-width:860px;margin:0 auto;padding-inline:var(--gut)}
+h1{font-family:var(--fd);font-weight:700;font-size:clamp(30px,6vw,52px);line-height:1;margin:0;letter-spacing:-.02em}
+h2{font-family:var(--fd);font-weight:600;font-size:clamp(23px,3.6vw,33px);line-height:1.08;margin:0;letter-spacing:-.015em}
+h3{font-family:var(--fd);font-weight:600;font-size:19px;margin:0}
+p{margin:0}
+.eyebrow{font-family:var(--fn);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--sun);margin:0 0 12px}
+.lead{font-size:17px;line-height:1.62;color:var(--bone-dim);max-width:58ch}
+
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--under);
+  padding:10px var(--gut);display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--hair)}
+.back{font-family:var(--fn);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-dim);text-decoration:none}
+.back:hover{color:var(--sun)}
+.switch{position:relative;display:flex;background:rgba(242,239,227,.1);padding:3px;border-radius:999px}
+.switch .thumb{position:absolute;top:3px;left:3px;width:50px;height:calc(100% - 6px);background:var(--sun);
+  border-radius:999px;transition:transform .26s cubic-bezier(.34,1.3,.5,1)}
+.switch button{position:relative;z-index:1;width:50px;border:0;background:none;cursor:pointer;
+  font-family:var(--fb);font-weight:700;font-size:12px;letter-spacing:.1em;color:var(--bone-dim);padding:7px 0}
+.switch button[aria-pressed="true"]{color:var(--under)}
+.switch button:focus-visible{outline:2px solid var(--bone);outline-offset:2px;border-radius:999px}
+
+header.hd{background:var(--under);padding-block:clamp(34px,6vw,58px)}
+header.hd img{width:54px;margin-bottom:16px}
+section{padding-block:clamp(34px,5.5vw,62px);border-top:1px solid var(--hair)}
+
+.files{display:grid;gap:10px;margin-top:22px}
+.files a{display:flex;align-items:center;gap:15px;border:1px solid var(--hair);border-radius:4px;
+  padding:15px 18px;text-decoration:none;color:var(--bone);transition:border-color .2s,background .2s}
+.files a:hover{border-color:var(--sun);background:rgba(233,168,38,.07)}
+.files .ico{font-family:var(--fn);font-size:10px;letter-spacing:.1em;color:var(--sun);
+  border:1px solid var(--sun);border-radius:3px;padding:4px 7px;flex:0 0 auto}
+.files b{font-family:var(--fd);font-weight:600;font-size:17px;display:block;line-height:1.2}
+.files span{display:block;font-size:13.5px;color:var(--bone-dim);margin-top:2px}
+
+ol.steps{list-style:none;margin:24px 0 0;padding:0;counter-reset:s}
+ol.steps > li{counter-increment:s;display:grid;grid-template-columns:38px 1fr;gap:16px;
+  padding:18px 0;border-top:1px solid var(--hair)}
+ol.steps > li::before{content:counter(s);font-family:var(--fd);font-weight:700;font-size:26px;color:var(--sun);line-height:1}
+ol.steps h3{margin-bottom:8px}
+ol.steps ul{margin:0;padding-left:18px;font-size:15px;line-height:1.6;color:var(--bone-dim)}
+ol.steps li li{margin-bottom:5px}
+ol.steps b{color:var(--bone)}
+code{font-family:var(--fn);font-size:.9em;background:rgba(242,239,227,.1);padding:2px 6px;border-radius:3px;color:var(--sun-br, #f6c75b)}
+.warn{margin-top:14px;border:2px solid var(--sun);border-radius:4px;padding:18px 20px;background:rgba(233,168,38,.07)}
+.warn b{font-family:var(--fd);font-size:17px;display:block;margin-bottom:5px}
+.warn p{font-size:15px;line-height:1.55;color:var(--bone-dim)}
+.tip{margin-top:12px;font-size:14.5px;color:var(--bone-dim);border-left:2px solid var(--leaf);padding-left:14px}
+footer{background:var(--under);padding-block:30px;font-size:13px;color:var(--bone-dim);border-top:1px solid var(--hair)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="back" href="index.html" data-i="back">← Volver al sitio</a>
+  <span class="switch" role="group" aria-label="Idioma">
+    <span class="thumb" id="thumb" aria-hidden="true"></span>
+    <button type="button" data-lang="es" aria-pressed="true">ES</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+  </span>
+</div>
+
+<header class="hd">
+  <div class="wrap">
+    <img src="img/logo.png" alt="Logo Jacha Inti">
+    <p class="eyebrow" data-i="eye">Uso interno · Refugio Jacha Inti</p>
+    <h1 data-i="h1">Equipo y voluntarios</h1>
+    <p class="lead" style="margin-top:14px" data-i="lead">Las rutinas diarias para imprimir, y cómo pasar este sitio a nombre del refugio. Esta página no aparece en Google ni en el menú: solo quien tenga el enlace llega aquí.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow" data-i="rEye">Rutinas diarias</p>
+    <h2 data-i="rH">Las fichas de los voluntarios</h2>
+    <p class="lead" style="margin-top:12px" data-i="rP">Una hoja A4 por zona. Imprimir, plastificar y colgar en la pared. El voluntario marca su vuelta con marcador borrable.</p>
+    <div class="files">
+      <a href="docs/Jacha-Inti-Zona-1-ES.pdf"><span class="ico">PDF</span><span><b data-i="f1">Zona 1 — Rutina</b><span data-i="f1s">Español · 1 hoja A4</span></span></a>
+      <a href="docs/Jacha-Inti-Zona-2-ES.pdf"><span class="ico">PDF</span><span><b data-i="f2">Zona 2 — Rutina</b><span data-i="f2s">Español · 1 hoja A4</span></span></a>
+      <a href="docs/Jacha-Inti-Zona-2-FR.pdf"><span class="ico">PDF</span><span><b data-i="f3">Zona 2 — Rutina</b><span data-i="f3s">Francés · 1 hoja A4</span></span></a>
+      <a href="docs/Jacha-Inti-Guia-de-Traspaso.pdf"><span class="ico">PDF</span><span><b data-i="f4">Guía de traspaso</b><span data-i="f4s">Qué existe y cómo seguir · 1 hoja A4</span></span></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow" data-i="gEye">Para el refugio</p>
+    <h2 data-i="gH">Poner el sitio a nombre del refugio</h2>
+    <p class="lead" style="margin-top:12px" data-i="gP">Hoy el sitio vive en la cuenta personal de un voluntario. Cuando él se va, el refugio depende de él para cualquier cambio. Esto se arregla en quince minutos y <b>no cuesta nada, nunca</b>.</p>
+
+    <div class="warn">
+      <b data-i="wB">De esta dirección…</b>
+      <p data-i="wP">Hoy: <code>floriandepandagro.github.io/jacha-inti</code><br>Después: <code>jachainti.github.io</code></p>
+    </div>
+
+    <ol class="steps">
+      <li><div>
+        <h3 data-i="s1h">Crear la cuenta del refugio</h3>
+        <ul>
+          <li data-i="s1a">Entrar en <code>github.com/signup</code></li>
+          <li data-i="s1b">Correo: el del refugio, <b>nunca el de una persona</b></li>
+          <li data-i="s1c">Nombre de usuario: escribir exactamente <code>jachainti</code>, en minúsculas y sin espacios. Ese nombre será la dirección del sitio.</li>
+          <li data-i="s1d">Contraseña: inventarla y <b>anotarla en papel</b>, guardarla en la oficina</li>
+          <li data-i="s1e">GitHub manda un código al correo: copiarlo y confirmar</li>
+          <li data-i="s1f">Es gratis. No piden tarjeta ni datos bancarios.</li>
+        </ul>
+      </div></li>
+      <li><div>
+        <h3 data-i="s2h">Pedir el traspaso al voluntario</h3>
+        <ul>
+          <li data-i="s2a">Esto lo hace él, desde su cuenta, en dos minutos</li>
+          <li data-i="s2b">Abre su repositorio → <b>Settings</b> → hasta abajo, <b>Danger Zone</b></li>
+          <li data-i="s2c">→ <b>Transfer ownership</b> → escribe <code>jachainti</code> → confirma</li>
+          <li data-i="s2d">El refugio recibe un correo y hace clic en <b>Accept transfer</b></li>
+        </ul>
+      </div></li>
+      <li><div>
+        <h3 data-i="s3h">Cambiar el nombre del repositorio</h3>
+        <ul>
+          <li data-i="s3a">Desde la cuenta del refugio: <b>Settings</b> → <b>Repository name</b></li>
+          <li data-i="s3b">Escribir exactamente <code>jachainti.github.io</code> y pulsar <b>Rename</b></li>
+          <li data-i="s3c">Ese nombre es lo que convierte el repositorio en la página principal.</li>
+        </ul>
+      </div></li>
+      <li><div>
+        <h3 data-i="s4h">Encender el sitio</h3>
+        <ul>
+          <li data-i="s4a"><b>Settings</b> → <b>Pages</b> (menú de la izquierda)</li>
+          <li data-i="s4b">Source: <b>Deploy from a branch</b> · Branch: <b>main</b> · carpeta <b>/ (root)</b> → <b>Save</b></li>
+          <li data-i="s4c">Esperar dos minutos y recargar: aparece la dirección en verde</li>
+        </ul>
+      </div></li>
+      <li><div>
+        <h3 data-i="s5h">Listo</h3>
+        <ul>
+          <li data-i="s5a">El sitio queda en <code>https://jachainti.github.io</code></li>
+          <li data-i="s5b"><b>Gratis para siempre</b>: sin renovación, sin fecha de vencimiento, nada que pagar</li>
+          <li data-i="s5c">Ponerlo en Facebook, Instagram, TikTok y en los carteles del refugio</li>
+        </ul>
+      </div></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow" data-i="cEye">Después</p>
+    <h2 data-i="cH">Cambiar algo en el sitio</h2>
+    <p class="lead" style="margin-top:12px" data-i="cP">Todo el sitio son dos cosas: un archivo de texto llamado <code>index.html</code> y una carpeta de fotos llamada <code>img</code>. Nada más. No hay otro programa ni otro servicio que mantener.</p>
+    <ol class="steps">
+      <li><div>
+        <h3 data-i="c1h">Un precio, un teléfono, un horario</h3>
+        <ul>
+          <li data-i="c1a">Abrir <code>index.html</code> en GitHub y pulsar el <b>lápiz</b> (editar)</li>
+          <li data-i="c1b">Buscar el dato con <b>Ctrl+F</b>, cambiarlo</li>
+          <li data-i="c1c">Abajo del todo: <b>Commit changes</b>. El sitio se actualiza solo en uno o dos minutos.</li>
+        </ul>
+      </div></li>
+      <li><div>
+        <h3 data-i="c2h">Una foto</h3>
+        <ul>
+          <li data-i="c2a">Las fotos están en la carpeta <code>img</code>, <b>en este mismo repositorio</b></li>
+          <li data-i="c2b">Para reemplazar una: subir la nueva con <b>exactamente el mismo nombre</b> que la vieja</li>
+          <li data-i="c2c">Para añadir una: subirla a <code>img</code> y nombrarla en <code>index.html</code></li>
+        </ul>
+      </div></li>
+      <li><div>
+        <h3 data-i="c3h">Quitar el aviso de borrador</h3>
+        <ul>
+          <li data-i="c3a">Arriba de la página hay un aviso «Borrador para aprobación del refugio»</li>
+          <li data-i="c3b">En <code>index.html</code>, buscar <code>draft</code> y borrar esa línea</li>
+          <li data-i="c3c">Buscar también <code>noindex</code> y borrar esa línea, para que el sitio aparezca en Google</li>
+        </ul>
+      </div></li>
+    </ol>
+    <p class="tip" data-i="tip">Nada de esto necesita Cloudflare, Netlify, Canva ni ningún otro servicio. Las fotos y el texto viven en el mismo sitio, en GitHub, y ahí se cambian.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p data-i="foot">Refugio de Fauna Silvestre Jacha Inti · Samaipata, Bolivia · página de uso interno</p>
+  </div>
+</footer>
+
+<script>
+var T = {
+ en:{
+  back:"← Back to the site",
+  eye:"Internal use · Jacha Inti Refuge", h1:"Team and volunteers",
+  lead:"The daily routines to print, and how to move this site to the refuge's own account. This page is not in Google and not in the menu: only someone with the link gets here.",
+  rEye:"Daily routines", rH:"The volunteer sheets",
+  rP:"One A4 sheet per zone. Print it, laminate it, put it on the wall. The volunteer ticks the round off with a dry-wipe marker.",
+  f1:"Zone 1 — Routine", f1s:"Spanish · one A4 sheet",
+  f2:"Zone 2 — Routine", f2s:"Spanish · one A4 sheet",
+  f3:"Zone 2 — Routine", f3s:"French · one A4 sheet",
+  f4:"Handover guide", f4s:"What exists and how to carry on · one A4 sheet",
+  gEye:"For the refuge", gH:"Put the site in the refuge's name",
+  gP:"Today the site lives in a volunteer's personal account. When he leaves, the refuge depends on him for every change. This takes fifteen minutes to fix and <b>costs nothing, ever</b>.",
+  wB:"From this address…", wP:"Today: <code>floriandepandagro.github.io/jacha-inti</code><br>After: <code>jachainti.github.io</code>",
+  s1h:"Create the refuge's account",
+  s1a:"Go to <code>github.com/signup</code>",
+  s1b:"Email: the refuge's one, <b>never a person's</b>",
+  s1c:"Username: type exactly <code>jachainti</code>, lowercase, no spaces. That name becomes the site's address.",
+  s1d:"Password: make one up and <b>write it on paper</b>, keep it in the office",
+  s1e:"GitHub emails a code: copy it and confirm",
+  s1f:"It is free. No card, no bank details.",
+  s2h:"Ask the volunteer to transfer it",
+  s2a:"He does this from his own account, in two minutes",
+  s2b:"He opens his repository → <b>Settings</b> → right at the bottom, <b>Danger Zone</b>",
+  s2c:"→ <b>Transfer ownership</b> → types <code>jachainti</code> → confirms",
+  s2d:"The refuge gets an email and clicks <b>Accept transfer</b>",
+  s3h:"Rename the repository",
+  s3a:"From the refuge's account: <b>Settings</b> → <b>Repository name</b>",
+  s3b:"Type exactly <code>jachainti.github.io</code> and press <b>Rename</b>",
+  s3c:"That name is what turns the repository into the main page.",
+  s4h:"Switch the site on",
+  s4a:"<b>Settings</b> → <b>Pages</b> (left-hand menu)",
+  s4b:"Source: <b>Deploy from a branch</b> · Branch: <b>main</b> · folder <b>/ (root)</b> → <b>Save</b>",
+  s4c:"Wait two minutes and reload: the address appears in a green bar",
+  s5h:"Done",
+  s5a:"The site becomes <code>https://jachainti.github.io</code>",
+  s5b:"<b>Free forever</b>: no renewal, no expiry date, nothing to pay",
+  s5c:"Put it on Facebook, Instagram, TikTok and on the signs at the refuge",
+  cEye:"Afterwards", cH:"Change something on the site",
+  cP:"The whole site is two things: a text file called <code>index.html</code> and a photo folder called <code>img</code>. That is all. There is no other program and no other service to maintain.",
+  c1h:"A price, a phone number, an opening time",
+  c1a:"Open <code>index.html</code> on GitHub and click the <b>pencil</b> (edit)",
+  c1b:"Find the detail with <b>Ctrl+F</b> and change it",
+  c1c:"At the bottom: <b>Commit changes</b>. The site updates itself in a minute or two.",
+  c2h:"A photo",
+  c2a:"The photos are in the <code>img</code> folder, <b>in this same repository</b>",
+  c2b:"To replace one: upload the new photo with <b>exactly the same filename</b> as the old one",
+  c2c:"To add one: upload it to <code>img</code> and name it in <code>index.html</code>",
+  c3h:"Remove the draft notice",
+  c3a:"At the top of the page there is a notice «Draft for the refuge to approve»",
+  c3b:"In <code>index.html</code>, search for <code>draft</code> and delete that line",
+  c3c:"Search for <code>noindex</code> too and delete that line, so the site shows up in Google",
+  tip:"None of this needs Cloudflare, Netlify, Canva or any other service. The photos and the text live in the same place, on GitHub, and that is where you change them.",
+  foot:"Jacha Inti Wildlife Refuge · Samaipata, Bolivia · internal page"
+ },
+ fr:{
+  back:"← Retour au site",
+  eye:"Usage interne · Refuge Jacha Inti", h1:"Équipe et volontaires",
+  lead:"Les routines quotidiennes à imprimer, et comment basculer ce site sur le compte du refuge. Cette page n'est ni dans Google ni dans le menu : seul celui qui a le lien y arrive.",
+  rEye:"Routines quotidiennes", rH:"Les fiches des volontaires",
+  rP:"Une feuille A4 par zone. Imprimer, plastifier, accrocher au mur. Le volontaire coche sa tournée au feutre effaçable.",
+  f1:"Zone 1 — Routine", f1s:"Espagnol · une feuille A4",
+  f2:"Zone 2 — Routine", f2s:"Espagnol · une feuille A4",
+  f3:"Zone 2 — Routine", f3s:"Français · une feuille A4",
+  f4:"Guide de passation", f4s:"Ce qui existe et comment continuer · une feuille A4",
+  gEye:"Pour le refuge", gH:"Mettre le site au nom du refuge",
+  gP:"Aujourd'hui le site vit sur le compte personnel d'un volontaire. Quand il part, le refuge dépend de lui pour le moindre changement. Cela se règle en quinze minutes et <b>ne coûte rien, jamais</b>.",
+  wB:"De cette adresse…", wP:"Aujourd'hui : <code>floriandepandagro.github.io/jacha-inti</code><br>Après : <code>jachainti.github.io</code>",
+  s1h:"Créer le compte du refuge",
+  s1a:"Aller sur <code>github.com/signup</code>",
+  s1b:"Adresse e-mail : celle du refuge, <b>jamais celle d'une personne</b>",
+  s1c:"Nom d'utilisateur : taper exactement <code>jachainti</code>, en minuscules, sans espace. Ce nom deviendra l'adresse du site.",
+  s1d:"Mot de passe : en inventer un et <b>le noter sur papier</b>, à garder au bureau",
+  s1e:"GitHub envoie un code par e-mail : le recopier et valider",
+  s1f:"C'est gratuit. Ni carte bancaire ni coordonnées bancaires.",
+  s2h:"Demander le transfert au volontaire",
+  s2a:"C'est lui qui le fait, depuis son compte, en deux minutes",
+  s2b:"Il ouvre son dépôt → <b>Settings</b> → tout en bas, <b>Danger Zone</b>",
+  s2c:"→ <b>Transfer ownership</b> → il tape <code>jachainti</code> → il confirme",
+  s2d:"Le refuge reçoit un e-mail et clique sur <b>Accept transfer</b>",
+  s3h:"Renommer le dépôt",
+  s3a:"Depuis le compte du refuge : <b>Settings</b> → <b>Repository name</b>",
+  s3b:"Taper exactement <code>jachainti.github.io</code> puis <b>Rename</b>",
+  s3c:"C'est ce nom qui transforme le dépôt en page principale.",
+  s4h:"Allumer le site",
+  s4a:"<b>Settings</b> → <b>Pages</b> (menu de gauche)",
+  s4b:"Source : <b>Deploy from a branch</b> · Branch : <b>main</b> · dossier <b>/ (root)</b> → <b>Save</b>",
+  s4c:"Attendre deux minutes et recharger : l'adresse apparaît dans un bandeau vert",
+  s5h:"C'est fait",
+  s5a:"Le site devient <code>https://jachainti.github.io</code>",
+  s5b:"<b>Gratuit à vie</b> : pas de renouvellement, pas de date d'expiration, rien à payer",
+  s5c:"À mettre sur Facebook, Instagram, TikTok et sur les panneaux du refuge",
+  cEye:"Ensuite", cH:"Changer quelque chose sur le site",
+  cP:"Tout le site tient en deux choses : un fichier texte appelé <code>index.html</code> et un dossier de photos appelé <code>img</code>. C'est tout. Aucun autre programme, aucun autre service à entretenir.",
+  c1h:"Un prix, un téléphone, un horaire",
+  c1a:"Ouvrir <code>index.html</code> sur GitHub et cliquer sur le <b>crayon</b> (modifier)",
+  c1b:"Chercher la donnée avec <b>Ctrl+F</b> et la changer",
+  c1c:"Tout en bas : <b>Commit changes</b>. Le site se met à jour seul en une ou deux minutes.",
+  c2h:"Une photo",
+  c2a:"Les photos sont dans le dossier <code>img</code>, <b>dans ce même dépôt</b>",
+  c2b:"Pour en remplacer une : téléverser la nouvelle avec <b>exactement le même nom de fichier</b> que l'ancienne",
+  c2c:"Pour en ajouter une : la téléverser dans <code>img</code> et la nommer dans <code>index.html</code>",
+  c3h:"Enlever la mention brouillon",
+  c3a:"En haut de la page il y a la mention « Brouillon soumis au refuge »",
+  c3b:"Dans <code>index.html</code>, chercher <code>draft</code> et supprimer cette ligne",
+  c3c:"Chercher aussi <code>noindex</code> et supprimer cette ligne, pour que le site apparaisse dans Google",
+  tip:"Rien de tout cela ne nécessite Cloudflare, Netlify, Canva ou un autre service. Les photos et le texte vivent au même endroit, sur GitHub, et c'est là qu'on les change.",
+  foot:"Refugio de Fauna Silvestre Jacha Inti · Samaipata, Bolivie · page interne"
+ }
+};
+(function(){
+  var nodes=document.querySelectorAll('[data-i]'), es={};
+  nodes.forEach(function(n){ es[n.getAttribute('data-i')]=n.innerHTML; });
+  T.es=es;
+  var order=['es','en','fr'], btns=document.querySelectorAll('.switch button'), thumb=document.getElementById('thumb');
+  function apply(l){
+    var d=T[l]||T.es;
+    nodes.forEach(function(n){ var k=n.getAttribute('data-i'); if(d[k]!==undefined) n.innerHTML=d[k]; });
+    btns.forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-lang')===l)); });
+    thumb.style.transform='translateX('+(order.indexOf(l)*50)+'px)';
+    document.documentElement.lang=l;
+    try{ localStorage.setItem('ji-lang-eq',l); }catch(e){}
+  }
+  btns.forEach(function(b){ b.addEventListener('click',function(){ apply(b.getAttribute('data-lang')); }); });
+  var sv=null; try{ sv=localStorage.getItem('ji-lang-eq')||localStorage.getItem('ji-lang'); }catch(e){}
+  if(!sv||order.indexOf(sv)===-1){ var n=(navigator.language||'es').slice(0,2).toLowerCase(); sv=(n==='fr'||n==='en')?n:'es'; }
+  apply(sv);
+})();
+</script>
+</body>
+</html>
