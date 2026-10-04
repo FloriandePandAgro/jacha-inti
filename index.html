@@ -241,6 +241,17 @@ h3{font-family:var(--fd);font-weight:600;margin:0;font-size:22px;line-height:1.1
 .min > span{display:block;margin-top:10px;font-size:14.5px;color:var(--bone-dim);line-height:1.52}
 .min .wa{margin-top:22px}
 .min .cta{margin-top:20px}
+.docsbar{margin-top:clamp(32px,5vw,52px);border:1px solid var(--hair);border-radius:4px;
+  padding:clamp(20px,3vw,28px);display:flex;flex-wrap:wrap;gap:20px 32px;
+  align-items:center;justify-content:space-between;background:rgba(242,239,227,.04)}
+.docsbar-t{flex:1 1 300px;min-width:0}
+.docsbar b{font-family:var(--fd);font-weight:600;font-size:clamp(19px,2.6vw,25px);display:block;line-height:1.15}
+.docsbar span{display:block;margin-top:7px;font-size:14.5px;line-height:1.5;color:var(--bone-dim);max-width:46ch}
+.docsbar .cta{flex:0 0 auto;margin:0;text-align:center}
+@media (max-width:620px){
+  .docsbar{flex-direction:column;align-items:stretch}
+  .docsbar .cta{flex:1 1 auto;width:100%;justify-content:center;padding-inline:18px}
+}
 
 /* ===== contact ===== */
 .contact{background:var(--under);padding-block:clamp(56px,9vw,104px)}
@@ -455,9 +466,13 @@ footer p{max-width:44ch;line-height:1.55}
         </div>
       </div>
     </div>
-    <p style="margin-top:30px">
-      <a href="equipo.html" style="font-family:var(--fn);font-size:12px;letter-spacing:.08em;color:var(--bone-dim);text-decoration:none;border-bottom:1px solid var(--hair);padding-bottom:3px" data-i="teamLink">Equipo y voluntarios · rutinas diarias y administración del sitio →</a>
-    </p>
+    <div class="docsbar">
+      <div class="docsbar-t">
+        <b data-i="docsH">¿Ya eres voluntario aquí?</b>
+        <span data-i="docsP">Las fichas de la rutina diaria, zona por zona, listas para imprimir. En español, inglés y francés.</span>
+      </div>
+      <a class="cta ghost" href="equipo.html" data-i="docsBtn">Ver las rutinas y los documentos</a>
+    </div>
   </div>
 </section>
 
@@ -531,7 +546,7 @@ var T = {
     vidEye:"Em vídeo", vidH:"O refúgio em movimento",
     vidP:"As fotos não levam o barulho das araras nem os macacos pulando entre as árvores. O vídeo leva.",
     vidBtn:"Ver o vídeo", soundOn:"Ativar o som", soundOff:"Desativar o som",
-    teamLink:"Equipe e voluntários · rotinas diárias e administração do site →",
+    docsH:"Já é voluntário aqui?", docsP:"As fichas da rotina diária, zona por zona, prontas para imprimir. Em espanhol, inglês e francês.", docsBtn:"Ver as rotinas e os documentos",
     volEye:"Voluntariado", volH:"Quer cuidar de<br>animais resgatados?",
     volP:"Não é um passeio. Você acorda cedo, empurra o carrinho de mão, limpa recintos e alimenta cada animal. Em troca, passa os dias entre macacos, araras e quatis, num vale dos Andes bolivianos.",
     zones:"O refúgio é dividido em zonas e cada voluntário recebe a sua. Dependendo da zona você cuidará de macacos, antas, veados, aves, jabutis ou felinos: cada uma tem sua própria rotina, ensinada na chegada.",
@@ -580,7 +595,7 @@ var T = {
     vidEye:"On video", vidH:"The refuge in motion",
     vidP:"Photos cannot carry the noise of the macaws or the monkeys leaping through the trees. The video can.",
     vidBtn:"Watch the video", soundOn:"Turn on sound", soundOff:"Mute",
-    teamLink:"Team and volunteers · daily routines and running the site →",
+    docsH:"Already volunteering here?", docsP:"The daily routine sheets, zone by zone, ready to print. In Spanish, English and French.", docsBtn:"See the routines and documents",
     volEye:"Volunteering", volH:"Want to look after<br>rescued animals?",
     volP:"This is not a tour. You get up early, push the wheelbarrow, clean enclosures and feed every animal. In return you spend your days among monkeys, macaws and coatis, in a valley in the Bolivian Andes.",
     zones:"The refuge is divided into zones, and each volunteer is assigned one. Depending on your zone you will look after monkeys, tapirs, deer, birds, tortoises or wild cats: each has its own routine, and you are taught it when you arrive.",
@@ -628,7 +643,7 @@ var T = {
     vidEye:"En vidéo", vidH:"Le refuge en mouvement",
     vidP:"Les photos ne rendent ni le vacarme des aras ni les singes qui sautent d'arbre en arbre. La vidéo, oui.",
     vidBtn:"Voir la vidéo", soundOn:"Activer le son", soundOff:"Couper le son",
-    teamLink:"Équipe et volontaires · routines quotidiennes et gestion du site →",
+    docsH:"Déjà volontaire ici\u00a0?", docsP:"Les fiches de la routine quotidienne, zone par zone, prêtes à imprimer. En espagnol, anglais et français.", docsBtn:"Voir les routines et les documents",
     volEye:"Volontariat", volH:"Envie de t'occuper<br>d'animaux rescapés ?",
     volP:"Ce n'est pas une visite. Tu te lèves tôt, tu pousses la brouette, tu nettoies les enclos et tu nourris chaque animal. En échange, tu passes tes journées parmi les singes, les aras et les coatis, dans une vallée des Andes boliviennes.",
     zones:"Le refuge est divisé en zones, et chaque volontaire se voit attribuer la sienne. Selon ta zone, tu t'occuperas de singes, de tapirs, de cerfs, d'oiseaux, de tortues ou de félins : chacune a sa propre routine, on te l'apprend en arrivant.",
