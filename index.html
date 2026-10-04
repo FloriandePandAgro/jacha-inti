@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Refugio de Fauna Silvestre Jacha Inti, Samaipata, Bolivia. Visitas, voluntariado y animales rescatados.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="img/logo.png">
+<title>Refugio Jacha Inti — Samaipata, Bolivia</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+</head>
+<body>
+<style>
+/* Monde unique et assume : la foret de nuages de Samaipata, du sous-bois a la canopee.
+   Fond vert profond partout, photos qui respirent dessus, le soleil du logo pour seul accent chaud. */
+:root{
+  --under:#061a12;      /* sous-bois, le plus sombre */
+  --forest:#0a2a1d;     /* fond general */
+  --forest-2:#0e3827;   /* bandes alternees */
+  --canopy:#15543a;     /* bordures, surfaces */
+  --leaf:#3f9c6d;       /* vert vif, liens */
+  --sun:#e9a826;        /* le soleil du logo */
+  --sun-2:#f6c75b;
+  --bone:#f2efe3;       /* texte principal */
+  --bone-dim:#b9c4ba;   /* texte secondaire */
+  --hair:rgba(242,239,227,.14);
+  --fd:"Fraunces",Georgia,serif;
+  --fb:"Archivo",system-ui,-apple-system,sans-serif;
+  --fn:"IBM Plex Mono",ui-monospace,monospace;
+  --gut:clamp(20px,5.5vw,72px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--forest);color:var(--bone);font-family:var(--fb);font-size:16.5px;line-height:1.62}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:var(--gut)}
+section{position:relative}
+p{margin:0}
+h2{font-family:var(--fd);font-optical-sizing:auto;font-weight:600;margin:0;line-height:1.02;
+  font-size:clamp(33px,5.6vw,62px);letter-spacing:-.018em;text-wrap:balance}
+h3{font-family:var(--fd);font-weight:600;margin:0;font-size:22px;line-height:1.14;letter-spacing:-.01em}
+.eyebrow{font-family:var(--fn);font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--sun);margin:0 0 16px;display:flex;align-items:center;gap:12px}
+.eyebrow::after{content:"";height:1px;flex:1 1 auto;background:linear-gradient(90deg,var(--sun),transparent);max-width:120px}
+.lead{font-size:clamp(16.5px,1.85vw,20px);line-height:1.64;color:var(--bone-dim);max-width:58ch}
+
+/* ===== barre du haut ===== */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;flex-wrap:wrap;
+  gap:10px 18px;align-items:center;justify-content:space-between;
+  padding:calc(10px + env(safe-area-inset-top,0px)) var(--gut) 10px;
+  background:linear-gradient(180deg,rgba(6,26,18,.92),rgba(6,26,18,0));
+  transition:background .3s ease}
+.topbar.solid{background:rgba(6,26,18,.96);border-bottom:1px solid var(--hair)}
+.draft{font-family:var(--fn);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--bone-dim);display:flex;align-items:center;gap:9px;min-width:0}
+.draft::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sun);flex:0 0 auto}
+.switch{position:relative;display:flex;background:rgba(242,239,227,.1);padding:3px;
+  border-radius:999px;backdrop-filter:blur(8px);flex:0 0 auto}
+.switch .thumb{position:absolute;top:3px;left:3px;width:50px;height:calc(100% - 6px);
+  background:var(--sun);border-radius:999px;transition:transform .26s cubic-bezier(.34,1.3,.5,1)}
+.switch button{position:relative;z-index:1;width:50px;border:0;background:none;cursor:pointer;
+  font-family:var(--fb);font-weight:700;font-size:12px;letter-spacing:.1em;color:var(--bone-dim);padding:7px 0}
+.switch button[aria-pressed="true"]{color:var(--under)}
+.switch button:focus-visible{outline:2px solid var(--bone);outline-offset:2px;border-radius:999px}
+
+/* ===== hero + carrousel ===== */
+.hero{position:relative;min-height:clamp(540px,80vh,780px);display:flex;align-items:flex-end;
+  overflow:hidden;background:var(--under)}
+.carousel{position:absolute;inset:0}
+.carousel figure{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1.5s ease}
+.carousel figure.on{opacity:1}
+.carousel img{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
+.carousel figure.on img{animation:drift 9s ease-out forwards}
+@keyframes drift{from{transform:scale(1.04)}to{transform:scale(1.14)}}
+@media (prefers-reduced-motion:reduce){.carousel figure.on img{animation:none}}
+.scrim{position:absolute;inset:0;
+  background:linear-gradient(185deg,rgba(6,26,18,.74) 0%,rgba(6,26,18,.3) 34%,rgba(6,26,18,.86) 74%,var(--forest) 100%)}
+.scrim::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(120% 78% at 14% 92%,rgba(6,26,18,.92),transparent 62%)}
+.hero .wrap{position:relative;z-index:2;padding-block:clamp(96px,13vw,120px) clamp(34px,6vw,62px);width:100%}
+.heromark{width:clamp(54px,8vw,74px);margin-bottom:18px}
+.hero h1{font-family:var(--fd);font-weight:700;margin:0;color:#fff;
+  font-size:clamp(58px,13.5vw,142px);line-height:.84;letter-spacing:-.035em}
+.hero .place{font-family:var(--fn);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--sun-2);margin:18px 0 0}
+.hero .lead{color:#dfe4dd;margin-top:16px;max-width:46ch;text-shadow:0 1px 20px rgba(6,26,18,.6)}
+.herofoot{display:flex;flex-wrap:wrap;gap:20px 28px;align-items:center;margin-top:30px}
+.cta{display:inline-flex;align-items:center;gap:12px;background:var(--sun);color:var(--under);
+  font-family:var(--fb);font-weight:700;font-size:16px;letter-spacing:.02em;
+  padding:16px 28px;border-radius:999px;text-decoration:none;transition:transform .2s,background .2s}
+.cta:hover{background:var(--sun-2);transform:translateY(-2px)}
+.cta:focus-visible{outline:3px solid var(--bone);outline-offset:3px}
+.cta svg{width:17px;height:17px}
+.dots{display:flex;gap:8px}
+.dots button{width:9px;height:9px;padding:0;border-radius:50%;border:0;cursor:pointer;
+  background:rgba(242,239,227,.32);transition:background .25s,width .25s}
+.dots button[aria-current="true"]{background:var(--sun);width:26px;border-radius:999px}
+.dots button:focus-visible{outline:2px solid var(--bone);outline-offset:3px}
+
+/* ===== feuillage : trait organique entre les sections ===== */
+.fringe{display:block;width:100%;height:clamp(26px,3.4vw,44px);color:var(--forest-2)}
+
+/* ===== le refuge ===== */
+.about{background:var(--forest-2);padding-block:clamp(56px,9vw,104px)}
+.about .inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:clamp(26px,5vw,64px);align-items:end}
+@media (max-width:860px){.about .inner{grid-template-columns:1fr;align-items:start}}
+.about .lead{margin-top:20px}
+.facts{display:grid;gap:18px}
+.facts div{border-top:1px solid var(--hair);padding-top:14px}
+.facts b{font-family:var(--fd);font-weight:600;font-size:clamp(38px,5.4vw,56px);line-height:.92;color:var(--sun);display:block}
+.facts span{display:block;margin-top:6px;font-size:14px;color:var(--bone-dim);line-height:1.45;max-width:30ch}
+
+/* ===== residents ===== */
+.residents{padding-block:clamp(56px,9vw,104px)}
+.rgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(12px,1.6vw,20px);margin-top:clamp(28px,4vw,44px)}
+.rgrid .card{grid-column:span 2}
+.rgrid .card:nth-child(1),.rgrid .card:nth-child(2){grid-column:span 3}
+@media (max-width:860px){.rgrid{grid-template-columns:repeat(2,1fr)}
+  .rgrid .card:nth-child(n){grid-column:span 1}
+  .rgrid .card:nth-child(1){grid-column:span 2}}
+.card{position:relative;overflow:hidden;border-radius:3px;background:var(--under);display:block}
+.card .fr{position:relative;overflow:hidden;aspect-ratio:4/5}
+.card:nth-child(1) .fr,.card:nth-child(2) .fr{aspect-ratio:16/11}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.card:hover img{transform:scale(1.06)}
+.card .vignette{position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(6,26,18,.94) 0%,rgba(6,26,18,.42) 38%,transparent 68%)}
+.card .cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2vw,22px)}
+.card .cap h3{color:#fff}
+.card .cap p{margin-top:5px;font-size:13.5px;line-height:1.45;color:#c8d1c7;max-width:34ch}
+.also{margin-top:26px;font-size:14.5px;color:var(--bone-dim);border-left:2px solid var(--sun);padding-left:16px;max-width:60ch}
+
+/* ===== visitar ===== */
+.visit{background:var(--under);padding-block:clamp(56px,9vw,104px)}
+.visit .inner{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(30px,5vw,64px);align-items:start;margin-top:clamp(26px,4vw,40px)}
+@media (max-width:860px){.visit .inner{grid-template-columns:1fr}}
+.prices{border:1px solid var(--hair);border-radius:4px;overflow:hidden}
+.prices .row{display:flex;align-items:baseline;justify-content:space-between;gap:18px;
+  padding:16px 20px;border-bottom:1px solid var(--hair)}
+.prices .row:last-child{border-bottom:0}
+.prices .row.hi{background:rgba(233,168,38,.08)}
+.prices dt{font-family:var(--fd);font-weight:600;font-size:17.5px;min-width:0}
+.prices dt small{display:block;font-family:var(--fb);font-weight:400;font-size:13px;color:var(--bone-dim);margin-top:2px}
+.prices dd{margin:0;font-family:var(--fd);font-weight:700;font-size:clamp(21px,2.8vw,27px);
+  color:var(--sun);white-space:nowrap;font-variant-numeric:tabular-nums}
+.prices dd em{font-style:normal;font-size:13px;font-family:var(--fn);color:var(--bone-dim);margin-left:3px}
+.getting{margin-top:26px}
+.getting h3{margin-bottom:4px}
+.getting p.sub{font-size:13.5px;color:var(--bone-dim);margin-bottom:14px}
+.ways{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ways li{display:flex;align-items:center;gap:14px;border:1px solid var(--hair);border-radius:4px;padding:13px 16px}
+.ways svg{width:22px;height:22px;flex:0 0 auto;color:var(--leaf)}
+.ways .wt{min-width:0}
+.ways b{font-weight:600;font-size:15px;display:block}
+.ways .wt small{display:block;font-family:var(--fn);font-size:12.5px;margin-top:3px}
+.ways .wt small a{color:var(--leaf);text-decoration:none;border-bottom:1px solid rgba(63,156,109,.45)}
+.ways .wt small a:hover{color:var(--sun);border-color:var(--sun)}
+.ways span{margin-left:auto;font-family:var(--fn);font-size:13.5px;color:var(--sun);white-space:nowrap}
+.maplink{display:inline-flex;align-items:center;gap:10px;margin-top:18px;color:var(--bone);
+  text-decoration:none;border-bottom:1px solid var(--sun);padding-bottom:3px;font-size:15px}
+.maplink:hover{color:var(--sun)}
+.maplink svg{width:17px;height:17px;color:var(--sun)}
+
+/* ===== bouton WhatsApp ===== */
+.wa{display:inline-flex;align-items:center;gap:11px;background:#1f9e52;color:#04210f;
+  font-family:var(--fb);font-weight:700;font-size:15.5px;padding:15px 26px;border-radius:999px;
+  text-decoration:none;transition:transform .2s,background .2s}
+.wa:hover{background:#27b85f;transform:translateY(-2px)}
+.wa:focus-visible{outline:3px solid var(--bone);outline-offset:3px}
+.wa svg{width:20px;height:20px;flex:0 0 auto}
+.cta.ghost{background:none;color:var(--bone);border:1px solid rgba(242,239,227,.45)}
+.cta.ghost:hover{background:rgba(242,239,227,.12);color:#fff}
+
+/* ===== video ===== */
+.video{background:var(--under);padding-block:clamp(48px,7vw,86px);overflow:hidden}
+.video .wrap{display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between;position:relative;z-index:1}
+.plays{display:flex;flex-direction:column;gap:12px;flex:0 0 auto}
+.video .txt{flex:1 1 320px;min-width:0}
+.video h2{font-size:clamp(27px,4vw,44px)}
+.video p{margin-top:12px;color:var(--bone-dim);font-size:15.5px;max-width:44ch}
+.play{display:inline-flex;align-items:center;gap:17px;text-decoration:none;color:var(--bone);
+  border:1px solid var(--hair);border-radius:999px;padding:13px 26px 13px 13px;flex:0 0 auto;
+  transition:border-color .25s,background .25s}
+.play:hover{border-color:var(--sun);background:rgba(233,168,38,.09)}
+.play:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.play .disc{width:46px;height:46px;border-radius:50%;background:var(--sun);color:var(--under);
+  display:grid;place-items:center;flex:0 0 auto}
+.play .disc svg{width:17px;height:17px}
+.play b{font-family:var(--fd);font-weight:600;font-size:19px;display:block;line-height:1.15}
+.play small{font-family:var(--fn);font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--bone-dim);display:block;margin-top:3px}
+
+/* ===== lecteur video ===== */
+.clipwrap{position:relative;flex:0 0 auto;width:min(300px,76vw);border-radius:10px;overflow:hidden;
+  background:#000;box-shadow:0 24px 60px -24px rgba(0,0,0,.8)}
+.clipwrap #ytplayer,.clipwrap iframe{width:100%;aspect-ratio:9/16;border:0;display:block}
+.sound{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;gap:8px;
+  background:rgba(6,26,18,.72);color:var(--bone);border:1px solid rgba(242,239,227,.3);
+  border-radius:999px;padding:9px 15px 9px 11px;cursor:pointer;font-family:var(--fb);
+  font-weight:600;font-size:13px;backdrop-filter:blur(10px);transition:background .25s,border-color .25s}
+.sound:hover{background:rgba(233,168,38,.9);color:var(--under);border-color:var(--sun)}
+.sound:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.sound svg{width:17px;height:17px;flex:0 0 auto}
+
+/* ===== voluntariado ===== */
+.vol{background:var(--forest-2);padding-block:clamp(56px,9vw,104px)}
+.vol h2{font-size:clamp(36px,7vw,80px)}
+.volgrid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(28px,5vw,60px);
+  align-items:start;margin-top:clamp(30px,4.5vw,50px)}
+@media (max-width:860px){.volgrid{grid-template-columns:1fr}}
+.day{list-style:none;margin:0;padding:0;counter-reset:d}
+.day li{counter-increment:d;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:baseline;
+  padding:15px 0;border-top:1px solid var(--hair)}
+.day li::before{content:counter(d,decimal-leading-zero);font-family:var(--fn);font-size:11.5px;color:var(--sun)}
+.day b{font-family:var(--fd);font-weight:600;font-size:18px;display:block;line-height:1.2}
+.day span{display:block;font-size:14px;color:var(--bone-dim);line-height:1.5;margin-top:4px}
+.volshot{position:relative;border-radius:3px;overflow:hidden}
+.volshot img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.min{margin-top:18px;border:1px solid var(--sun);border-radius:3px;padding:24px;background:rgba(233,168,38,.07)}
+.min b{display:block;font-family:var(--fd);font-weight:700;font-size:clamp(38px,6vw,58px);line-height:.95;color:var(--sun)}
+.min span{display:block;margin-top:10px;font-size:14.5px;color:var(--bone-dim);line-height:1.52}
+.min .cta{margin-top:20px}
+
+/* ===== contact ===== */
+.contact{background:var(--under);padding-block:clamp(56px,9vw,104px)}
+.contact .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:clamp(28px,4.5vw,56px);align-items:start}
+.phone{font-family:var(--fd);font-weight:700;font-size:clamp(31px,6vw,54px);line-height:1.04;
+  margin:16px 0 0;color:#fff;word-break:break-word;letter-spacing:-.02em}
+.copy{margin-top:18px;display:inline-flex;align-items:center;gap:9px;background:none;cursor:pointer;
+  border:1px solid var(--hair);border-radius:999px;color:var(--bone);font-family:var(--fb);font-weight:600;
+  font-size:13.5px;padding:11px 20px;transition:border-color .25s,background .25s}
+.copy:hover{border-color:var(--sun);background:rgba(233,168,38,.09)}
+.copy:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+.langs{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.langs span{font-family:var(--fn);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;
+  border:1px solid var(--hair);border-radius:999px;padding:6px 13px;color:var(--bone-dim)}
+.hours{margin-top:22px;font-size:14.5px;color:var(--bone-dim);line-height:1.62}
+
+footer{background:var(--forest);padding-block:38px;font-size:13px;color:var(--bone-dim);border-top:1px solid var(--hair)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:22px 30px;align-items:center;justify-content:space-between}
+.social{display:flex;gap:10px;flex-wrap:wrap}
+.social a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--hair);color:var(--bone-dim);transition:color .25s,border-color .25s,background .25s}
+.social a:hover{color:var(--under);background:var(--sun);border-color:var(--sun)}
+.social a:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.social svg{width:19px;height:19px}
+footer img{width:50px;flex:0 0 auto;opacity:.85}
+footer p{max-width:44ch;line-height:1.55}
+</style>
+
+<div class="topbar" id="topbar">
+  <span class="draft" data-i="draft">Borrador para aprobación del refugio</span>
+  <span class="switch" role="group" aria-label="Idioma / Language / Langue">
+    <span class="thumb" id="thumb" aria-hidden="true"></span>
+    <button type="button" id="l-es" data-lang="es" aria-pressed="true">ES</button>
+    <button type="button" id="l-pt" data-lang="pt" aria-pressed="false">PT</button>
+    <button type="button" id="l-en" data-lang="en" aria-pressed="false">EN</button>
+    <button type="button" id="l-fr" data-lang="fr" aria-pressed="false">FR</button>
+  </span>
+</div>
+
+<header class="hero">
+  <div class="carousel" id="carousel" aria-label="Fotos del refugio">
+    <figure class="on"><img src="img/gato-tronco.jpg" alt="Un gato montés sobre un tronco, en pleno sol" style="object-position:50% 45%"></figure>
+    <figure><img src="img/dar-comer-pavo.jpg" alt="Un visitante da de comer a dos ciervos, un pavo real y un jochi" style="object-position:50% 46%" loading="lazy"></figure>
+    <figure><img src="img/mono-ardilla.jpg" alt="Un mono ardilla camina sobre el brazo de una persona" style="object-position:50% 42%" loading="lazy"></figure>
+    <figure><img src="img/gato-bostezo.jpg" alt="Un gato montés bostezando detrás de la malla, entre flores" style="object-position:50% 42%" loading="lazy"></figure>
+    <figure><img src="img/voluntario-mono.jpg" alt="Un voluntario con un mono ardilla sobre el hombro" style="object-position:50% 38%" loading="lazy"></figure>
+    <figure><img src="img/ardilla-frente.jpg" alt="Un mono ardilla posado en una baranda de madera" style="object-position:50% 45%" loading="lazy"></figure>
+  </div>
+  <div class="scrim"></div>
+  <div class="wrap">
+    <img class="heromark" src="img/logo.png" alt="Logo del Refugio Jacha Inti: un sol de puntas alrededor de un yin-yang formado por un mono y un ave" width="420" height="420">
+    <h1>Jacha Inti</h1>
+    <p class="place">Refugio de Fauna Silvestre · Samaipata · Bolivia</p>
+    <p class="lead" data-i="heroLead">Animales silvestres rescatados del tráfico ilegal, decomisados o heridos. Más de quince años cuidándolos en el bosque de Samaipata.</p>
+    <div class="herofoot">
+      <a class="cta" href="#visitar"><span data-i="ctaVisit">Visitar el refugio</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="cta ghost" href="#voluntariado" data-i="ctaHero">Quiero ser voluntario</a>
+      <span class="dots" id="dots"></span>
+    </div>
+  </div>
+</header>
+
+<svg class="fringe" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48 L0 22 C 60 2, 110 40, 170 20 C 230 0, 280 36, 345 18 C 410 0, 455 38, 520 22 C 585 6, 630 40, 700 24 C 770 8, 815 38, 880 20 C 945 2, 995 36, 1060 18 C 1125 0, 1165 28, 1200 14 L 1200 48 Z" fill="currentColor"/></svg>
+
+<section class="about" id="refugio">
+  <div class="wrap inner">
+    <div>
+      <p class="eyebrow" data-i="aboutEye">El refugio</p>
+      <h2 data-i="aboutH">Animales que ya no pueden volver al monte</h2>
+      <p class="lead" data-i="aboutP">Jacha Inti nació hace más de quince años, creado por una familia suiza que eligió Samaipata como su casa. Los que viven aquí fueron decomisados al tráfico de fauna, entregados por sus dueños o heridos y sin posibilidad de sobrevivir solos. Cada uno tiene su recinto, su dieta y su rutina, todos los días del año. <b>Una veterinaria vive en el refugio</b> y revisa a los animales cada día.</p>
+    </div>
+    <div class="facts">
+      <div><b>+15</b><span data-i="f1t">años cuidando fauna silvestre en el valle de Samaipata</span></div>
+      <div><b>08 – 18</b><span data-i="f2t">abierto al público todos los días del año</span></div>
+      <div><b>2</b><span data-i="f3t">semanas: la estancia mínima para ser voluntario</span></div>
+      <div><b data-i="f4n">A diario</b><span data-i="f4t">una veterinaria vive en el refugio y revisa a los animales</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="residents" id="animales">
+  <div class="wrap">
+    <p class="eyebrow" data-i="animEye">Quiénes viven aquí</p>
+    <h2 data-i="animH">Los residentes</h2>
+    <div class="rgrid">
+
+      <article class="card">
+        <div class="fr"><img src="img/gato-flores.jpg" alt="Un gato montés entre las flores, detrás de la malla de su recinto" loading="lazy"></div>
+        <span class="vignette"></span>
+        <div class="cap"><h3 data-i="a6h">Felinos</h3><p data-i="a6">Un ocelote y un gato montés. Comen carne, solo por la tarde.</p></div>
+      </article>
+
+      <article class="card">
+        <div class="fr"><img src="img/ardilla-viga.jpg" alt="Mono ardilla sentado sobre una viga de madera" loading="lazy"></div>
+        <span class="vignette"></span>
+        <div class="cap"><h3 data-i="a2h">Monos ardilla</h3><p data-i="a2">Viven sueltos por el refugio. Se acercan solos, sin que nadie los llame.</p></div>
+      </article>
+
+      <article class="card">
+        <div class="fr"><img src="img/titi-comiendo.jpg" alt="Mono titi comiendo una vaina verde, sentado en una rama" loading="lazy"></div>
+        <span class="vignette"></span>
+        <div class="cap"><h3 data-i="a1h">Monos</h3><p data-i="a1">Rescatados del comercio de mascotas.</p></div>
+      </article>
+
+      <article class="card">
+        <div class="fr"><img src="img/guacamayos.jpg" alt="Dos guacamayos azul y amarillo en su aviario" loading="lazy"></div>
+        <span class="vignette"></span>
+        <div class="cap"><h3 data-i="a3h">Guacamayos</h3><p data-i="a3">Parabas azul y amarillo, y parabas rojas de pico temible.</p></div>
+      </article>
+
+      <article class="card">
+        <div class="fr"><img src="img/cotorrita.jpg" alt="Cotorrita verde posada junto a su comedero" loading="lazy"></div>
+        <span class="vignette"></span>
+        <div class="cap"><h3 data-i="a9h">Cotorritas</h3><p data-i="a9">Pequeñas y ruidosas. Agua y semillas cada dos días.</p></div>
+      </article>
+
+      <article class="card">
+        <div class="fr"><img src="img/tortugas.jpg" alt="Cuatro tortugas terrestres alrededor de una bandeja de verduras" loading="lazy"></div>
+        <span class="vignette"></span>
+        <div class="cap"><h3 data-i="a4h">Tortugas</h3><p data-i="a4">Beben del grifo que alimenta la tortuga de piedra.</p></div>
+      </article>
+
+      <article class="card">
+        <div class="fr"><img src="img/ciervo-conejos.jpg" alt="Un ciervo y tres conejos comiendo juntos de la misma bandeja" loading="lazy"></div>
+        <span class="vignette"></span>
+        <div class="cap"><h3 data-i="a5h">Ciervos y conejos</h3><p data-i="a5">Comparten recinto y comen de la misma bandeja.</p></div>
+      </article>
+
+      <article class="card">
+        <div class="fr"><img src="img/jochi.jpg" alt="Un jochi descansando al sol sobre la tierra roja" loading="lazy"></div>
+        <span class="vignette"></span>
+        <div class="cap"><h3 data-i="a10h">Jochis y taitetús</h3><p data-i="a10">Andan por los senderos y aparecen cuando se reparte la comida.</p></div>
+      </article>
+
+    </div>
+    <p class="also" data-i="also">También viven aquí tres tejones, tapires, pavos reales, los caballos Nogal y Primavera, chanchos, cuyes y una pajarera de inseparables.</p>
+  </div>
+</section>
+
+<section class="visit" id="visitar">
+  <div class="wrap">
+    <p class="eyebrow" data-i="visEye">Visitas</p>
+    <h2 data-i="visH">Abierto al público,<br>todos los días del año</h2>
+    <p class="lead" style="margin-top:18px" data-i="visP">No hace falta reservar. Durante la visita <b>se puede dar de comer a los animales</b> y recorrer el refugio <b>a caballo</b>. Los monos ardilla andan sueltos: se acercan solos.</p>
+    <div class="inner">
+      <dl class="prices">
+        <div class="row"><dt data-i="pr1">Entrada adultos</dt><dd>25 <em>Bs</em></dd></div>
+        <div class="row"><dt data-i="pr2">Entrada niños</dt><dd>15 <em>Bs</em></dd></div>
+        <div class="row hi"><dt data-i="pr3">Visita a caballo<small data-i="pr3s">Recorrer el refugio montado, opcional</small></dt><dd>10 <em>Bs</em></dd></div>
+        <div class="row"><dt data-i="pr4">Horario<small data-i="pr4s">Lunes a domingo, todo el año</small></dt><dd>08 – 18</dd></div>
+      </dl>
+      <figure class="shot" style="grid-column:1/-1;margin-top:6px">
+        <img src="img/dar-comer-ciervo.jpg" alt="Una visitante da de comer a un ciervo mientras un jochi y un guacamayo esperan" loading="lazy" style="border-radius:4px">
+        <figcaption data-i="capVisit">Durante la visita se puede dar de comer a los animales</figcaption>
+      </figure>
+      <div class="getting">
+        <h3 data-i="wayH">Cómo llegar</h3>
+        <p class="sub" data-i="wayS">Desde el centro de Samaipata</p>
+        <ul class="ways">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="4" r="1.6"/><path d="M11 21l1.5-5.5L9 13l1-5 3.5 2 2.5 1"/><path d="M10 8L7 10l-1 3"/><path d="M12.5 15.5L15 19l1 2"/></svg><span class="wt"><b data-i="way1">A pie</b></span><span data-i="way1v">25 min</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M8 17h6l-2.5-5H8.5L7 9h3"/><path d="M14 12l2-4h3"/></svg><span class="wt"><b data-i="way2">Mototaxi</b><small><a href="https://wa.me/59162785015" rel="noopener">+591 62785015</a></small></span><span>10 Bs</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13l1.8-5A2 2 0 016.7 6.7h10.6a2 2 0 011.9 1.3L21 13v5a1 1 0 01-1 1h-1.5a1 1 0 01-1-1v-1h-11v1a1 1 0 01-1 1H4a1 1 0 01-1-1z"/><circle cx="7" cy="15" r="1"/><circle cx="17" cy="15" r="1"/></svg><span class="wt"><b data-i="way3">Taxi</b><small><a href="https://wa.me/59167987899" rel="noopener">+591 67987899</a></small></span><span>30 Bs</span></li>
+        </ul>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Refugio%20Jacha%20Inti%20Samaipata" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <span data-i="mapBtn">Abrir en Google Maps</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="video" id="video">
+  <div class="wrap">
+    <div class="txt">
+      <p class="eyebrow" data-i="vidEye">En vídeo</p>
+      <h2 data-i="vidH">El refugio en movimiento</h2>
+      <p data-i="vidP">Las fotos no llevan el ruido de los guacamayos ni los monos saltando entre los árboles. El vídeo sí.</p>
+    </div>
+    <div class="clipwrap" id="ytwrap">
+      <div id="ytplayer"></div>
+      <button type="button" class="sound" id="soundbtn" aria-pressed="false">
+        <svg id="soundicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6.5 9H3v6h3.5L11 19z"/><path d="M17 9.5a4 4 0 010 5"/><path d="M19.5 7a7.5 7.5 0 010 10"/></svg>
+        <span data-i="soundOn">Activar sonido</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="vol" id="voluntariado">
+  <div class="wrap">
+    <p class="eyebrow" data-i="volEye">Voluntariado</p>
+    <h2 data-i="volH">¿Quieres cuidar<br>animales rescatados?</h2>
+    <div class="volgrid">
+      <div>
+        <p class="lead" data-i="volP">No es un paseo. Te levantas temprano, cargas la carretilla, limpias recintos y das de comer a cada animal. A cambio pasas tus días entre monos, guacamayos y coatíes, en un valle de los Andes bolivianos.</p>
+        <h3 style="margin-top:28px" data-i="dayH">Un día en el refugio</h3>
+        <ol class="day">
+          <li><div><b data-i="d1h">08:00 · Recoger los platos</b><span data-i="d1">Lo primero del día: la cocina no puede preparar las raciones sin ellos.</span></div></li>
+          <li><div><b data-i="d2h">Agua y limpieza</b><span data-i="d2">El mismo recorrido, recinto por recinto: limpiar y cambiar el agua.</span></div></li>
+          <li><div><b data-i="d3h">Dar de comer</b><span data-i="d3">Cada recinto tiene su truco. Los aprendes en los primeros días.</span></div></li>
+          <li><div><b data-i="d4h">16:00 · Turno de la tarde</b><span data-i="d4">Una segunda vuelta, para los animales que comen dos veces al día.</span></div></li>
+        </ol>
+        <p class="also" style="margin-top:22px" data-i="zones">El refugio está dividido en zonas y a cada voluntario se le asigna la suya. Según la zona cuidarás de monos, tapires, ciervos, aves, tortugas o felinos: cada una tiene su propia rutina y te la enseñan al llegar.</p>
+      </div>
+      <div>
+        <div class="volshot"><img src="img/voluntaria-carretilla.jpg" alt="Una voluntaria empuja la carretilla cargada con las bandejas de comida, una de ellas marcada CHANCHOS" loading="lazy"></div>
+        <div class="min">
+          <b data-i="minN">2 semanas</b>
+          <span data-i="minT">Estancia mínima. Los animales se acostumbran a quien los cuida, y aprender las rutinas lleva varios días.</span>
+          <a class="wa" id="wa-vol" href="https://wa.me/59178588119" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.05L2 22l5.1-1.33A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.18-1.14l-.3-.18-3.03.79.81-2.95-.2-.31A8.2 8.2 0 1112 20.2zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.13-.16.25-.63.8-.77.96-.14.16-.28.19-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.85.84-.85 2.03s.88 2.35 1 2.51c.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.52.59.18 1.12.16 1.54.1.47-.07 1.46-.6 1.66-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg><span data-i="waVol">Escribir por WhatsApp</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" data-i="conEye">Contacto</p>
+      <h2 data-i="conH">Habla con el refugio</h2>
+      <p class="lead" style="margin-top:16px" data-i="conP">Escribe o llama directamente. Te responde la familia que lleva el refugio.</p>
+    </div>
+    <div>
+      <p style="font-family:var(--fn);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--sun)" data-i="phoneLbl">Teléfono · WhatsApp</p>
+      <p class="phone" id="phone">+591 7858 8119</p>
+      <p style="margin-top:18px"><a class="wa" id="wa-visit" href="https://wa.me/59178588119" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.05L2 22l5.1-1.33A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.18-1.14l-.3-.18-3.03.79.81-2.95-.2-.31A8.2 8.2 0 1112 20.2zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.13-.16.25-.63.8-.77.96-.14.16-.28.19-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.85.84-.85 2.03s.88 2.35 1 2.51c.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.52.59.18 1.12.16 1.54.1.47-.07 1.46-.6 1.66-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg><span data-i="waVisit">Escribir por WhatsApp</span></a></p>
+      <button type="button" class="copy" id="copybtn" data-i="copy">Copiar el número</button>
+      <div class="langs"><span>Español</span><span>Français</span><span>English</span></div>
+      <p class="hours" data-i="hours">Abierto todos los días, 08:00 – 18:00.<br>Samaipata, provincia Florida, Santa Cruz, Bolivia.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="" width="420" height="420" loading="lazy">
+    <p data-i="foot">Refugio de Fauna Silvestre Jacha Inti · Samaipata, Bolivia. En aymara, <i>jach'a inti</i> significa «gran sol».</p>
+    <span class="social">
+      <a href="https://www.facebook.com/jachaintisamaipata/" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/zoologico.jacha.inti/" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@jacha.inti" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0115.54 3h-3.1v12.4a2.6 2.6 0 11-1.86-2.49v-3.16a5.72 5.72 0 105.02 5.67V9.01a7.35 7.35 0 004.3 1.38V7.28a4.3 4.3 0 01-3.3-1.46z"/></svg>
+      </a>
+    </span>
+    <p style="font-family:var(--fn);font-size:12px;letter-spacing:.08em">+591 7858 8119</p>
+  </div>
+</footer>
+
+<script>
+var T = {
+  pt:{
+    draft:"Rascunho para aprovação do refúgio",
+    heroLead:"Animais silvestres resgatados do tráfico ilegal, apreendidos ou feridos. Mais de quinze anos cuidando deles na mata de Samaipata.",
+    ctaHero:"Quero ser voluntário", ctaVisit:"Visitar o refúgio",
+    aboutEye:"O refúgio", aboutH:"Animais que não podem mais voltar à mata",
+    aboutP:"O Jacha Inti nasceu há mais de quinze anos, criado por uma família suíça que escolheu Samaipata para viver. Os que vivem aqui foram apreendidos do tráfico de fauna, entregues pelos donos, ou feridos e sem condições de sobreviver sozinhos. Cada um tem seu recinto, sua dieta e sua rotina, todos os dias do ano. <b>Uma veterinária mora no refúgio</b> e examina os animais todos os dias.",
+    f1t:"anos cuidando da fauna silvestre no vale de Samaipata",
+    f2t:"aberto ao público todos os dias do ano",
+    f3t:"semanas: a estadia mínima para ser voluntário",
+    f4n:"Diariamente", f4t:"uma veterinária mora no refúgio e examina os animais",
+    animEye:"Quem mora aqui", animH:"Os moradores",
+    a1h:"Macacos", a1:"Resgatados do comércio de animais de estimação.",
+    a2h:"Macacos-de-cheiro", a2:"Vivem soltos pelo refúgio. Chegam perto sozinhos, sem ninguém chamar.",
+    a3h:"Araras", a3:"Araras-canindé e araras vermelhas de bico temível.",
+    a4h:"Jabutis", a4:"Bebem da torneira que alimenta o jabuti de pedra.",
+    a5h:"Veados e coelhos", a5:"Dividem o recinto e comem da mesma bandeja.",
+    a6h:"Felinos", a6:"Uma jaguatirica e um gato-do-mato. Comem carne, só à tarde.",
+    a9h:"Periquitos", a9:"Pequenos e barulhentos. Água e sementes a cada dois dias.",
+    a10h:"Cutias e caititus", a10:"Andam pelas trilhas e aparecem sempre que a comida é servida.",
+    also:"Também vivem aqui três quatis, antas, pavões, os cavalos Nogal e Primavera, porcos, preás e um viveiro de aves do amor.",
+    visEye:"Visitas", visH:"Aberto ao público,<br>todos os dias do ano",
+    visP:"Não precisa reservar. Durante a visita dá para <b>alimentar os animais</b> e percorrer o refúgio <b>a cavalo</b>. Os macacos-de-cheiro vivem soltos: chegam perto sozinhos.",
+    pr1:"Entrada adultos", pr2:"Entrada crianças",
+    pr3:"Visita a cavalo", pr3s:"Percorrer o refúgio montado, opcional",
+    pr4:"Horário", pr4s:"De segunda a domingo, o ano todo",
+    wayH:"Como chegar", wayS:"Do centro de Samaipata",
+    way1:"A pé", way1v:"25 min", way2:"Mototáxi", way3:"Táxi",
+    mapBtn:"Abrir no Google Maps", capVisit:"Durante a visita dá para alimentar os animais",
+    vidEye:"Em vídeo", vidH:"O refúgio em movimento",
+    vidP:"As fotos não levam o barulho das araras nem os macacos pulando entre as árvores. O vídeo leva.",
+    vidBtn:"Ver o vídeo", soundOn:"Ativar o som", soundOff:"Desativar o som",
+    volEye:"Voluntariado", volH:"Quer cuidar de<br>animais resgatados?",
+    volP:"Não é um passeio. Você acorda cedo, empurra o carrinho de mão, limpa recintos e alimenta cada animal. Em troca, passa os dias entre macacos, araras e quatis, num vale dos Andes bolivianos.",
+    zones:"O refúgio é dividido em zonas e cada voluntário recebe a sua. Dependendo da zona você cuidará de macacos, antas, veados, aves, jabutis ou felinos: cada uma tem sua própria rotina, ensinada na chegada.",
+    dayH:"Um dia no refúgio",
+    d1h:"08:00 · Recolher os pratos", d1:"A primeira coisa do dia: a cozinha não prepara as rações sem eles.",
+    d2h:"Água e limpeza", d2:"O mesmo percurso, recinto por recinto: limpar e trocar a água.",
+    d3h:"Alimentar", d3:"Cada recinto tem seu truque. Você aprende nos primeiros dias.",
+    d4h:"16:00 · Turno da tarde", d4:"Uma segunda volta, para os animais que comem duas vezes por dia.",
+    minN:"2 semanas", minT:"Estadia mínima. Os animais se acostumam com quem cuida deles, e aprender as rotinas leva vários dias.",
+    ctaVol:"Escrever ao refúgio", waVol:"Falar no WhatsApp", waVisit:"Falar no WhatsApp",
+    cap2:"O carrinho de mão, toda manhã, recinto por recinto",
+    conEye:"Contato", conH:"Fale com o refúgio", conP:"Escreva ou ligue direto. Quem responde é a família que toca o refúgio.",
+    phoneLbl:"Telefone · WhatsApp", copy:"Copiar o número",
+    hours:"Aberto todos os dias, 08:00 - 18:00.<br>Samaipata, província Florida, Santa Cruz, Bolívia.",
+    foot:"Refugio de Fauna Silvestre Jacha Inti · Samaipata, Bolívia. Em aimará, <i>jach\'a inti</i> significa \u201cgrande sol\u201d."
+  },
+  en:{
+    draft:"Draft for the refuge to approve",
+    heroLead:"Wild animals rescued from illegal trafficking, seized or injured. More than fifteen years caring for them in the forest of Samaipata.",
+    ctaHero:"I want to volunteer",
+    aboutEye:"The refuge", aboutH:"Animals that cannot go back to the wild",
+    aboutP:"Jacha Inti was founded more than fifteen years ago by a Swiss family who made Samaipata their home. The animals living here were seized from the wildlife trade, handed over by their owners, or injured and unable to survive alone. Each one has its own enclosure, its own diet and its own routine, every day of the year. <b>A vet lives at the refuge</b> and checks on the animals every day.",
+    f1t:"years caring for wildlife in the Samaipata valley",
+    f2t:"open to visitors every day of the year",
+    f3t:"weeks: the minimum stay for volunteers",
+    f4n:"Daily", f4t:"a vet lives at the refuge and checks on the animals",
+    animEye:"Who lives here", animH:"The residents",
+    a1h:"Monkeys", a1:"Rescued from the pet trade.",
+    a2h:"Squirrel monkeys", a2:"They roam free around the refuge. They come to you without being called.",
+    a3h:"Macaws", a3:"Blue-and-gold macaws, and red macaws with fearsome beaks.",
+    a4h:"Tortoises", a4:"They drink from the tap that feeds the stone tortoise.",
+    a5h:"Deer and rabbits", a5:"They share an enclosure and eat from the same tray.",
+    a9h:"Parakeets", a9:"Small and loud. Water and seed every two days.",
+    a10h:"Agoutis and peccaries", a10:"They wander the paths and turn up whenever food is handed out.",
+    also:"Also living here are three coatis, tapirs, peacocks, the horses Nogal and Primavera, pigs, guinea pigs and an aviary of lovebirds.",
+    ctaVisit:"Visit the refuge",
+    visEye:"Visits", visH:"Open to the public,<br>every day of the year",
+    visP:"No booking needed. During the visit you can <b>feed the animals</b> and ride <b>on horseback</b> through the refuge. The squirrel monkeys roam free: they come to you.",
+    pr1:"Adult entry", pr2:"Children entry",
+    pr3:"Horseback visit", pr3s:"Ride through the refuge, optional",
+    pr4:"Opening hours", pr4s:"Monday to Sunday, all year round",
+    wayH:"Getting there", wayS:"From the centre of Samaipata",
+    way1:"On foot", way1v:"25 min", way2:"Moto-taxi", way3:"Taxi",
+    mapBtn:"Open in Google Maps", capVisit:"During the visit you can feed the animals",
+    waVol:"Message on WhatsApp", waVisit:"Message on WhatsApp",
+    vidEye:"On video", vidH:"The refuge in motion",
+    vidP:"Photos cannot carry the noise of the macaws or the monkeys leaping through the trees. The video can.",
+    vidBtn:"Watch the video", soundOn:"Turn on sound", soundOff:"Mute",
+    volEye:"Volunteering", volH:"Want to look after<br>rescued animals?",
+    volP:"This is not a tour. You get up early, push the wheelbarrow, clean enclosures and feed every animal. In return you spend your days among monkeys, macaws and coatis, in a valley in the Bolivian Andes.",
+    zones:"The refuge is divided into zones, and each volunteer is assigned one. Depending on your zone you will look after monkeys, tapirs, deer, birds, tortoises or wild cats: each has its own routine, and you are taught it when you arrive.",
+    dayH:"A day at the refuge",
+    d1h:"08:00 · Collect the food trays", d1:"First thing: the kitchen cannot prepare the rations without them.",
+    d2h:"Water and cleaning", d2:"The same round, enclosure by enclosure: clean up and change the water.",
+    d3h:"Feeding", d3:"Every enclosure has its trick. You pick them up in the first few days.",
+    d4h:"16:00 · Afternoon round", d4:"A second round, for the animals that eat twice a day.",
+    minN:"2 weeks", minT:"Minimum stay. The animals get used to whoever cares for them, and learning the routines takes several days.",
+    ctaVol:"Message the refuge",
+    conEye:"Contact", conH:"Talk to the refuge", conP:"Write or call directly. You will reach the family who runs the refuge.",
+    phoneLbl:"Phone · WhatsApp", copy:"Copy the number",
+    hours:"Open every day, 08:00 - 18:00.<br>Samaipata, Florida province, Santa Cruz, Bolivia.",
+    foot:"Jacha Inti Wildlife Refuge · Samaipata, Bolivia. In Aymara, <i>jach'a inti</i> means “great sun”."
+  },
+  fr:{
+    draft:"Brouillon soumis au refuge",
+    heroLead:"Des animaux sauvages arrachés au trafic illégal, saisis ou blessés. Plus de quinze ans à les soigner dans la forêt de Samaipata.",
+    ctaHero:"Je veux être volontaire",
+    aboutEye:"Le refuge", aboutH:"Des animaux qui ne peuvent plus retourner dans la forêt",
+    aboutP:"Jacha Inti est né il y a plus de quinze ans, fondé par une famille suisse qui a choisi Samaipata pour y vivre. Ceux qui vivent ici ont été saisis au trafic d'espèces sauvages, remis par leurs propriétaires, ou blessés et incapables de survivre seuls. Chacun a son enclos, son régime et sa routine, tous les jours de l'année. <b>Une vétérinaire vit au refuge</b> et examine les animaux chaque jour.",
+    f1t:"ans à soigner la faune sauvage dans la vallée de Samaipata",
+    f2t:"ouvert au public tous les jours de l'année",
+    f3t:"semaines : le séjour minimum pour être volontaire",
+    f4n:"Chaque jour", f4t:"une vétérinaire vit au refuge et examine les animaux",
+    animEye:"Qui vit ici", animH:"Les résidents",
+    a1h:"Singes", a1:"Arrachés au commerce d'animaux de compagnie.",
+    a2h:"Singes écureuils", a2:"Ils vivent en liberté dans le refuge. Ils viennent à toi sans qu'on les appelle.",
+    a3h:"Aras", a3:"Aras bleu et jaune, et aras rouges au bec redoutable.",
+    a4h:"Tortues", a4:"Elles boivent au robinet qui alimente la tortue de pierre.",
+    a5h:"Cerfs et lapins", a5:"Ils partagent l'enclos et mangent dans le même plateau.",
+    a9h:"Cotorritas", a9:"Petites et bruyantes. Eau et graines tous les deux jours.",
+    a10h:"Agoutis et pécaris", a10:"Ils parcourent les allées et rappliquent dès qu'on distribue la nourriture.",
+    also:"Vivent aussi ici trois coatis, des tapirs, des paons, les chevaux Nogal et Primavera, des cochons, des cuyes et une volière d'inséparables.",
+    ctaVisit:"Visiter le refuge",
+    visEye:"Visites", visH:"Ouvert au public,<br>tous les jours de l'année",
+    visP:"Pas besoin de réserver. Pendant la visite, on peut <b>nourrir les animaux</b> et parcourir le refuge <b>à cheval</b>. Les singes écureuils sont en liberté : ils viennent à toi.",
+    pr1:"Entrée adultes", pr2:"Entrée enfants",
+    pr3:"Visite à cheval", pr3s:"Parcourir le refuge monté, en option",
+    pr4:"Horaires", pr4s:"Du lundi au dimanche, toute l'année",
+    wayH:"Comment venir", wayS:"Depuis le centre de Samaipata",
+    way1:"À pied", way1v:"25 min", way2:"Mototaxi", way3:"Taxi",
+    mapBtn:"Ouvrir dans Google Maps", capVisit:"Pendant la visite, on peut nourrir les animaux",
+    waVol:"Écrire sur WhatsApp", waVisit:"Écrire sur WhatsApp",
+    vidEye:"En vidéo", vidH:"Le refuge en mouvement",
+    vidP:"Les photos ne rendent ni le vacarme des aras ni les singes qui sautent d'arbre en arbre. La vidéo, oui.",
+    vidBtn:"Voir la vidéo", soundOn:"Activer le son", soundOff:"Couper le son",
+    volEye:"Volontariat", volH:"Envie de t'occuper<br>d'animaux rescapés ?",
+    volP:"Ce n'est pas une visite. Tu te lèves tôt, tu pousses la brouette, tu nettoies les enclos et tu nourris chaque animal. En échange, tu passes tes journées parmi les singes, les aras et les coatis, dans une vallée des Andes boliviennes.",
+    zones:"Le refuge est divisé en zones, et chaque volontaire se voit attribuer la sienne. Selon ta zone, tu t'occuperas de singes, de tapirs, de cerfs, d'oiseaux, de tortues ou de félins : chacune a sa propre routine, on te l'apprend en arrivant.",
+    dayH:"Une journée au refuge",
+    d1h:"08:00 · Récupérer les plateaux", d1:"La première chose : la cuisine ne peut pas préparer les rations sans eux.",
+    d2h:"Eau et nettoyage", d2:"La même tournée, enclos par enclos : nettoyer et changer l'eau.",
+    d3h:"Distribuer la nourriture", d3:"Chaque enclos a son truc. On les apprend les premiers jours.",
+    d4h:"16:00 · Tournée de l'après-midi", d4:"Une deuxième tournée, pour les animaux qui mangent deux fois par jour.",
+    minN:"2 semaines", minT:"Séjour minimum. Les animaux s'habituent à qui s'occupe d'eux, et apprendre les routines prend plusieurs jours.",
+    ctaVol:"Écrire au refuge",
+    conEye:"Contact", conH:"Parle au refuge", conP:"Écris ou appelle directement. C'est la famille qui tient le refuge qui te répond.",
+    phoneLbl:"Téléphone · WhatsApp", copy:"Copier le numéro",
+    hours:"Ouvert tous les jours, 08:00 - 18:00.<br>Samaipata, province Florida, Santa Cruz, Bolivie.",
+    foot:"Refugio de Fauna Silvestre Jacha Inti · Samaipata, Bolivie. En aymara, <i>jach'a inti</i> signifie «&nbsp;grand soleil&nbsp;»."
+  }
+};
+
+/* ---------- WhatsApp : message pre-rempli selon la langue ---------- */
+var WA = {
+  pt:{ vol:"Ol\u00e1, eu gostaria de ser volunt\u00e1rio no ref\u00fagio Jacha Inti. Podem me mandar mais informa\u00e7\u00f5es?",
+       visit:"Ol\u00e1, eu gostaria de visitar o ref\u00fagio Jacha Inti. Podem me mandar mais informa\u00e7\u00f5es?" },
+  es:{ vol:"Hola, quisiera ser voluntario en el refugio Jacha Inti. \u00bfMe pueden dar m\u00e1s informaci\u00f3n?",
+       visit:"Hola, quisiera visitar el refugio Jacha Inti. \u00bfMe pueden dar m\u00e1s informaci\u00f3n?" },
+  en:{ vol:"Hello, I would like to volunteer at the Jacha Inti refuge. Could you send me more information?",
+       visit:"Hello, I would like to visit the Jacha Inti refuge. Could you send me more information?" },
+  fr:{ vol:"Bonjour, je souhaiterais \u00eatre volontaire au refuge Jacha Inti. Pourriez-vous m'envoyer plus d'informations ?",
+       visit:"Bonjour, je souhaiterais visiter le refuge Jacha Inti. Pourriez-vous m'envoyer plus d'informations ?" }
+};
+var WA_NUM = "59178588119";
+
+/* ---------- langues ---------- */
+(function(){
+  var nodes = document.querySelectorAll("[data-i]");
+  var es = {};
+  nodes.forEach(function(n){ es[n.getAttribute("data-i")] = n.innerHTML; });
+  T.es = es;
+  var order = ["es","pt","en","fr"];
+  var btns = document.querySelectorAll(".switch button");
+  var thumb = document.getElementById("thumb");
+
+  function apply(lang){
+    var d = T[lang] || T.es;
+    nodes.forEach(function(n){
+      var k = n.getAttribute("data-i");
+      if (d[k] !== undefined) n.innerHTML = d[k];
+    });
+    btns.forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang)); });
+    thumb.style.transform = "translateX(" + (order.indexOf(lang) * 50) + "px)";
+    var w = WA[lang] || WA.es;
+    var vol = document.getElementById("wa-vol");
+    var vis = document.getElementById("wa-visit");
+    if (vol) vol.href = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(w.vol);
+    if (vis) vis.href = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(w.visit);
+    document.documentElement.lang = lang;
+    try { localStorage.setItem("ji-lang", lang); } catch(e){}
+  }
+  btns.forEach(function(b){ b.addEventListener("click", function(){ apply(b.getAttribute("data-lang")); }); });
+
+  var saved = null;
+  try { saved = localStorage.getItem("ji-lang"); } catch(e){}
+  if (!saved || order.indexOf(saved) === -1) {
+    var nav = (navigator.language || "es").slice(0,2).toLowerCase();
+    saved = (nav === "fr" || nav === "en" || nav === "pt") ? nav : "es";
+  }
+  apply(saved);
+})();
+
+/* ---------- carrousel ---------- */
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll("#carousel figure"));
+  var dots = document.getElementById("dots");
+  if (slides.length < 2) return;
+  var i = 0, timer = null;
+  var slow = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  slides.forEach(function(s, n){
+    var b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("aria-label", "Foto " + (n + 1));
+    b.setAttribute("aria-current", n === 0 ? "true" : "false");
+    b.addEventListener("click", function(){ show(n); restart(); });
+    dots.appendChild(b);
+  });
+  var buttons = dots.querySelectorAll("button");
+
+  function show(n){
+    slides[i].classList.remove("on");
+    buttons[i].setAttribute("aria-current", "false");
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add("on");
+    buttons[i].setAttribute("aria-current", "true");
+  }
+  function next(){ show(i + 1); }
+  function restart(){ if (slow) return; clearInterval(timer); timer = setInterval(next, 5200); }
+  function stop(){ clearInterval(timer); }
+
+  if (!slow) restart();
+  var hero = document.querySelector(".hero");
+  hero.addEventListener("pointerenter", stop);
+  hero.addEventListener("pointerleave", restart);
+  hero.addEventListener("focusin", stop);
+  hero.addEventListener("focusout", restart);
+  document.addEventListener("visibilitychange", function(){ document.hidden ? stop() : restart(); });
+})();
+
+/* ---------- lecteur YouTube : lecture auto muette, bouton pour le son ---------- */
+var YT_ID = "mejZGY4-6oM";
+var ytPlayer = null;
+
+(function(){
+  var tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.head.appendChild(tag);
+})();
+
+function onYouTubeIframeAPIReady(){
+  ytPlayer = new YT.Player("ytplayer", {
+    videoId: YT_ID,
+    playerVars: { autoplay:1, mute:1, loop:1, playlist:YT_ID, controls:0,
+                  playsinline:1, rel:0, modestbranding:1, disablekb:1 },
+    events: {
+      onReady: function(e){ e.target.mute(); e.target.playVideo(); },
+      onStateChange: function(e){ if (e.data === YT.PlayerState.ENDED) e.target.playVideo(); }
+    }
+  });
+}
+
+(function(){
+  var btn  = document.getElementById("soundbtn");
+  var icon = document.getElementById("soundicon");
+  if (!btn) return;
+  var MUTED = '<path d="M11 5L6.5 9H3v6h3.5L11 19z"/><path d="M17 9.5a4 4 0 010 5"/><path d="M19.5 7a7.5 7.5 0 010 10"/>';
+  var LOUD  = '<path d="M11 5L6.5 9H3v6h3.5L11 19z"/><path d="M17 9l5 6M22 9l-5 6"/>';
+  var on = false;
+
+  btn.addEventListener("click", function(){
+    if (!ytPlayer || !ytPlayer.unMute) return;
+    on = !on;
+    if (on) { ytPlayer.unMute(); ytPlayer.setVolume(100); } else { ytPlayer.mute(); }
+    ytPlayer.playVideo();
+    btn.setAttribute("aria-pressed", String(on));
+    var dict = T[document.documentElement.lang] || T.es;
+    btn.querySelector("span").textContent = on ? (dict.soundOff || "Silenciar") : (dict.soundOn || "Activar sonido");
+    icon.innerHTML = on ? LOUD : MUTED;
+  });
+
+  /* pause hors de l'ecran : batterie et donnees mobiles */
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!ytPlayer || !ytPlayer.playVideo) return;
+        if (e.isIntersecting) ytPlayer.playVideo(); else ytPlayer.pauseVideo();
+      });
+    }, { threshold: 0.3 }).observe(document.getElementById("ytwrap"));
+  }
+})();
+
+/* ---------- barre qui se densifie, copie du numero ---------- */
+(function(){
+  var bar = document.getElementById("topbar");
+  var onScroll = function(){ bar.classList.toggle("solid", window.scrollY > 40); };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  var btn = document.getElementById("copybtn");
+  btn.addEventListener("click", function(){
+    var el = document.getElementById("phone");
+    var done = function(){
+      var old = btn.textContent;
+      btn.textContent = "✓";
+      setTimeout(function(){ btn.textContent = old; }, 1600);
+    };
+    var select = function(){
+      try {
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      } catch(e){}
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(el.textContent.trim()).then(done, select);
+    } else { select(); }
+  });
+})();
+</script>
+</body>
+</html>
