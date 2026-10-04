@@ -243,6 +243,10 @@ footer{background:var(--under);padding-block:30px;font-size:13px;color:var(--bon
     <p class="eyebrow" data-i="iEye">La manera facil</p>
     <h2 data-i="iH">Pedirle a una inteligencia artificial que lo haga</h2>
     <p class="lead" style="margin-top:12px" data-i="iP">No hace falta saber programar. ChatGPT o Claude hacen el cambio por ti, y la versión gratuita alcanza. Tú solo copias y pegas.</p>
+    <div class="warn" style="margin-top:18px">
+      <b data-i="iwB">No hay que conectar nada</b>
+      <p data-i="iwP">La inteligencia artificial <b>nunca toca GitHub</b>. Tú copias el texto, se lo pegas, te devuelve el texto corregido y tú lo pegas de vuelta. Tú eres el puente. Por eso <b>no hace falta pagar ninguna suscripción</b> ni instalar ninguna conexión.</p>
+    </div>
     <ol class="steps">
       <li><div>
         <h3 data-i="i1h">Copiar el archivo</h3>
@@ -258,8 +262,10 @@ footer{background:var(--under);padding-block:30px;font-size:13px;color:var(--bon
           <li data-i="i2a">Abrir <code>chatgpt.com</code> o <code>claude.ai</code> (cuenta gratuita)</li>
           <li data-i="i2b">Pegar todo el archivo y escribir abajo lo que quieres cambiar</li>
         </ul>
-        <div class="prompt"><em data-i="i2t">Ejemplo listo para copiar</em><span data-i="i2x">Te paso el archivo index.html de la web de nuestro refugio de animales. Cambia el precio de la entrada de adultos de 25 a 30 Bs en los cuatro idiomas. No toques nada más. Devuélveme el archivo completo.</span></div>
-        <p class="tip" data-i="i2n">Decir siempre «devuélveme el archivo completo»: si no, la IA te da solo un trozo y no sirve.</p>
+        <div class="prompt"><em data-i="i2t">Cambio pequeño — un precio, un teléfono, una frase</em><span data-i="i2x">Te paso el archivo index.html de la web de nuestro refugio. Quiero cambiar el precio de la entrada de adultos de 25 a 30 Bs en los cuatro idiomas. <b>No me devuelvas el archivo entero: dime solo las líneas exactas que hay que cambiar y por cuáles.</b></span></div>
+        <p class="tip" data-i="i2n">Para un cambio pequeño esto es lo más seguro: después, en GitHub, buscas esa línea con Ctrl+F y la cambias a mano. Nada más se puede romper.</p>
+        <div class="prompt"><em data-i="i2t2">Cambio grande — una sección nueva, un animal nuevo</em><span data-i="i2x2">Te paso el archivo zona-1-es.html, una ficha A4 que imprimimos en el refugio. Añade un animal nuevo llamado X con 2 platos, después de los loros amazonas. Mantén exactamente el mismo diseño y que siga entrando en una sola hoja. <b>Devuélveme el archivo completo.</b></span></div>
+        <p class="tip" data-i="i2n2">Aquí sí hay que pedir el archivo completo. Si la respuesta se corta a medias, escribe «sigue» y pega las dos partes juntas.</p>
       </div></li>
       <li><div>
         <h3 data-i="i3h">Volver a pegarlo en GitHub</h3>
@@ -273,7 +279,7 @@ footer{background:var(--under);padding-block:30px;font-size:13px;color:var(--bon
       <li><div>
         <h3 data-i="i4h">Volver a hacer el PDF de una ficha</h3>
         <ul>
-          <li data-i="i4a">Los originales de las fichas están en <code>docs/fuentes/</code>: son archivos <code>.html</code></li>
+          <li data-i="i4a">Los originales están en <code>docs/fuentes/</code>: archivos <code>.html</code> de unos 12 KB, pequeños y fáciles de pegar en un chat</li>
           <li data-i="i4b">Después de cambiarlos, abrir el archivo en el navegador</li>
           <li data-i="i4c"><b>Ctrl+P</b> → Destino: <b>Guardar como PDF</b> → Tamaño: <b>A4</b> → Guardar</li>
           <li data-i="i4d">Subir ese PDF nuevo a <code>docs/</code>, con el mismo nombre que el viejo</li>
@@ -288,7 +294,6 @@ footer{background:var(--under);padding-block:30px;font-size:13px;color:var(--bon
         </ul>
       </div></li>
     </ol>
-    <div class="prompt" style="margin-top:24px"><em data-i="i6t">Otro ejemplo: cambiar una ficha</em><span data-i="i6x">Te paso el archivo zona-1-es.html, que es una ficha A4 para imprimir en un refugio de animales. Añade un animal nuevo llamado X con 2 platos, después de los loros amazonas. Mantén exactamente el mismo diseño y que siga entrando en una sola hoja. Devuélveme el archivo completo.</span></div>
   </div>
 </section>
 
@@ -383,12 +388,19 @@ var T = {
   i4b:"Depois de mudar, abrir o arquivo no navegador",
   i4c:"<b>Ctrl+P</b> → Destino: <b>Salvar como PDF</b> → Tamanho: <b>A4</b> → Salvar",
   i4d:"Subir esse PDF novo para <code>docs/</code>, com o mesmo nome do antigo",
+  iwB:"Não é preciso conectar nada",
+  iwP:"A inteligência artificial <b>nunca toca no GitHub</b>. Você copia o texto, cola lá, ela devolve o texto corrigido e você cola de volta. Você é a ponte. Por isso <b>não é preciso pagar nenhuma assinatura</b> nem instalar nenhuma conexão.",
+  i2t:"Mudança pequena — um preço, um telefone, uma frase",
+  i2x:"Aqui está o arquivo index.html do site do nosso refúgio. Quero mudar o preço da entrada de adultos de 25 para 30 Bs nos quatro idiomas. <b>Não me devolva o arquivo inteiro: diga só as linhas exatas que têm de mudar e por quais.</b>",
+  i2n:"Para uma mudança pequena isto é o mais seguro: depois, no GitHub, você acha essa linha com Ctrl+F e muda à mão. Nada mais pode quebrar.",
+  i2t2:"Mudança grande — uma seção nova, um animal novo",
+  i2x2:"Aqui está o arquivo zona-1-es.html, uma ficha A4 que imprimimos no refúgio. Acrescente um animal novo chamado X com 2 pratos, depois dos loros amazonas. Mantenha exatamente o mesmo layout e garanta que continue cabendo numa só folha. <b>Me devolva o arquivo completo.</b>",
+  i2n2:"Aqui sim é preciso pedir o arquivo completo. Se a resposta cortar no meio, escreva «continue» e junte as duas partes.",
+  i4a:"Os originais estão em <code>docs/fuentes/</code>: arquivos <code>.html</code> de uns 12 KB, pequenos e fáceis de colar num chat",
   i5h:"Se der errado",
   i5a:"<b>Nada se perde nunca.</b> O GitHub guarda todas as versões anteriores.",
   i5b:"No arquivo: <b>History</b> → escolher a versão de antes → <b>Revert</b>",
   i5c:"É por isso que dá para tentar sem medo.",
-  i6t:"Outro exemplo: mudar uma ficha",
-  i6x:"Aqui está o arquivo zona-1-es.html, uma ficha A4 impressa num refúgio de animais. Acrescente um animal novo chamado X com 2 pratos, depois dos loros amazonas. Mantenha exatamente o mesmo layout e garanta que continue cabendo numa só folha. Me devolva o arquivo completo.",
   },
  en:{
   back:"← Back to the site",
@@ -473,12 +485,19 @@ var T = {
   i4b:"After changing one, open the file in your browser",
   i4c:"<b>Ctrl+P</b> → Destination: <b>Save as PDF</b> → Paper size: <b>A4</b> → Save",
   i4d:"Upload that new PDF to <code>docs/</code>, with the same filename as the old one",
+  iwB:"Nothing needs connecting",
+  iwP:"The AI <b>never touches GitHub</b>. You copy the text, paste it in, it hands back the corrected text, and you paste it back. You are the bridge. That is why <b>no subscription is needed</b> and no integration has to be installed.",
+  i2t:"Small change — a price, a phone number, a sentence",
+  i2x:"Here is the index.html file of our refuge's website. I want to change the adult entry price from 25 to 30 Bs in all four languages. <b>Do not give me the whole file back: tell me only the exact lines to change, and what to change them to.</b>",
+  i2n:"For a small change this is the safest route: then, on GitHub, you find that line with Ctrl+F and change it by hand. Nothing else can break.",
+  i2t2:"Big change — a new section, a new animal",
+  i2x2:"Here is the file zona-1-es.html, an A4 sheet we print at the refuge. Add a new animal called X with 2 bowls, after the amazon parrots. Keep exactly the same design and make sure it still fits on one page. <b>Give me back the complete file.</b>",
+  i2n2:"Here you do want the complete file. If the answer stops halfway, type \u00abcontinue\u00bb and join the two parts together.",
+  i4a:"The originals are in <code>docs/fuentes/</code>: <code>.html</code> files of about 12 KB, small and easy to paste into a chat",
   i5h:"If something goes wrong",
   i5a:"<b>Nothing is ever lost.</b> GitHub keeps every previous version.",
   i5b:"On the file: <b>History</b> → pick the version from before → <b>Revert</b>",
   i5c:"That is why you can try things without being afraid.",
-  i6t:"Another example: changing a sheet",
-  i6x:"Here is the file zona-1-es.html, an A4 sheet printed at an animal refuge. Add a new animal called X with 2 bowls, after the amazon parrots. Keep exactly the same design and make sure it still fits on a single page. Give me back the complete file.",
   foot:"Jacha Inti Wildlife Refuge · Samaipata, Bolivia · internal page"
  },
  fr:{
@@ -564,12 +583,19 @@ var T = {
   i4b:"Après modification, ouvrir le fichier dans le navigateur",
   i4c:"<b>Ctrl+P</b> → Destination : <b>Enregistrer au format PDF</b> → Format : <b>A4</b> → Enregistrer",
   i4d:"Téléverser ce nouveau PDF dans <code>docs/</code>, avec le même nom que l'ancien",
+  iwB:"Il n'y a rien à connecter",
+  iwP:"L'intelligence artificielle <b>ne touche jamais à GitHub</b>. Tu copies le texte, tu le lui colles, elle te rend le texte corrigé, tu le recolles. C'est toi le pont. C'est pour ça qu'<b>aucun abonnement payant n'est nécessaire</b> et qu'il n'y a aucune connexion à installer.",
+  i2t:"Petit changement — un prix, un téléphone, une phrase",
+  i2x:"Voici le fichier index.html du site de notre refuge. Je veux changer le prix de l'entrée adulte de 25 à 30 Bs dans les quatre langues. <b>Ne me rends pas tout le fichier : donne-moi seulement les lignes exactes à changer, et par quoi.</b>",
+  i2n:"Pour un petit changement c'est le plus sûr : ensuite, sur GitHub, tu retrouves cette ligne avec Ctrl+F et tu la changes à la main. Rien d'autre ne peut casser.",
+  i2t2:"Gros changement — une nouvelle section, un nouvel animal",
+  i2x2:"Voici le fichier zona-1-es.html, une fiche A4 qu'on imprime au refuge. Ajoute un nouvel animal appelé X avec 2 plateaux, après les loros amazonas. Garde exactement la même mise en page et fais en sorte que ça tienne toujours sur une seule feuille. <b>Rends-moi le fichier complet.</b>",
+  i2n2:"Là, il faut bien demander le fichier complet. Si la réponse s'arrête en route, écris «\u00a0continue\u00a0» et recolle les deux morceaux.",
+  i4a:"Les originaux sont dans <code>docs/fuentes/</code> : des fichiers <code>.html</code> d'environ 12 Ko, petits et faciles à coller dans un chat",
   i5h:"Si quelque chose se passe mal",
   i5a:"<b>On ne perd jamais rien.</b> GitHub garde toutes les versions précédentes.",
   i5b:"Sur le fichier : <b>History</b> → choisir la version d'avant → <b>Revert</b>",
   i5c:"C'est pour ça qu'on peut essayer sans crainte.",
-  i6t:"Autre exemple : modifier une fiche",
-  i6x:"Voici le fichier zona-1-es.html, une fiche A4 imprimée dans un refuge animalier. Ajoute un nouvel animal appelé X avec 2 plateaux, après les loros amazonas. Garde exactement la même mise en page et fais en sorte que ça tienne toujours sur une seule feuille. Rends-moi le fichier complet.",
   foot:"Refugio de Fauna Silvestre Jacha Inti · Samaipata, Bolivie · page interne"
  }
 };
